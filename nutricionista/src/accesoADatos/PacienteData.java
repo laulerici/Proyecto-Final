@@ -54,9 +54,70 @@ public class PacienteData {
         }
     }
     
-    public void bajaPaciente (int dni){
+    public void bajaPacienteDni (int dni){
         
-        String sql = "UPDATE paciente SET estado = 'false' WHERE dni =27171935";
+        String sql = "UPDATE paciente SET estado = 0 WHERE dni =?";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1,dni);
+            int exito = ps.executeUpdate();
+            
+            if (exito == 1){
+            JOptionPane.showMessageDialog(null, "Paciente eliminado");
+            }
+             
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error "+ ex);
+        }
+        
+        
+    }
+    
+     public void bajaPacienteAp (String apellido){
+        
+        String sql = "UPDATE paciente SET estado = 0 WHERE apellido =?";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1,apellido);
+            int exito = ps.executeUpdate();
+            
+            if (exito == 1){
+            JOptionPane.showMessageDialog(null, "Paciente eliminado");
+            }
+             
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error "+ ex);
+        }
+        
+        
+    }
+    public void modificarPaciente (Paciente paciente){
+        
+        String sql = "UPDATE paciente SET nombre=?, apellido=?, domicilio=?, dni=?, "
+                + "telefono=? WHERE estado=1 AND idPaciente=?";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setString(1, paciente.getNombre());
+            ps.setString(2, paciente.getApellido());
+            ps.setString(3, paciente.getDomicilio());
+            ps.setInt(4, paciente.getDni());
+            ps.setString(5, paciente.getTelef());
+            ps.setInt(6, paciente.getIdPaciente());
+
+            int exito = ps.executeUpdate();
+
+            if (exito == 1) {
+                JOptionPane.showMessageDialog(null, "Paciente modificado");
+            }
+             
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error "+ ex);
+        }
+        
         
     }
     
