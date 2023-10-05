@@ -94,5 +94,6 @@ public class ComidaData {
         
         
     }
-    
+         public void buscarComidaxDieta (Comida comida){
+         }
 }
