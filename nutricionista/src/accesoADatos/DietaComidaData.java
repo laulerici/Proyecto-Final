@@ -17,29 +17,27 @@ public class DietaComidaData {
         con = Conexion.conectar("nutricionista");
         
     }
-    public void altaDietaComida(DietaComida dietacomida){
+    public void agregarComidaADieta(DietaComida dietacomida){
         String sql= "INSERT INTO dietacomida(idComida, idDieta,estado) VALUES (?,?,?)";
+       // INSERT INTO dietacomida VALUES (4, 1,1,true);
     
          try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            ps.setInt(1, dietacomida.getIdDC());
-            ps.setInt(2, dietacomida.getIdComida());
-            ps.setInt(3, dietacomida.getIdDieta());
-            ps.setBoolean(4, dietacomida.isEstado());
+             ps.setInt(1, dietacomida.getIdComida());
+             ps.setInt(2, dietacomida.getIdDieta());
+             ps.setBoolean(3, dietacomida.isEstado());
 
-            ps.executeUpdate();
+             ps.executeUpdate();
 
-            ResultSet rs = ps.getGeneratedKeys();
+             ResultSet rs = ps.getGeneratedKeys();
 
-            if (rs.next()) {
+             if (rs.next()) {
 
-               dietacomida.setIdDieta(rs.getInt(1));
+                 dietacomida.setIdDC(rs.getInt(1));
 
-                JOptionPane.showMessageDialog(null, "Dieta Comida ingresada correctamente");
-
-            }
-
+                 JOptionPane.showMessageDialog(null, "Dieta Comida ingresada correctamente");
+             }
             ps.close();
             
         } catch (SQLException ex) {
@@ -47,6 +45,32 @@ public class DietaComidaData {
         }
     }
     
+//        public void sacarComidaDieta (String nombre){
+//        
+//        String sql = "UPDATE comida SET estado = 0 WHERE nombre=?";
+//        
+//        try {
+//            PreparedStatement ps = con.prepareStatement(sql);
+//            ps.setString(1,nombre);
+//            int exito = ps.executeUpdate();
+//            
+//            if (exito == 1){
+//            JOptionPane.showMessageDialog(null, "Comida eliminada");
+//            }
+//             
+//        } catch (SQLException ex) {
+//            JOptionPane.showMessageDialog(null, "Error "+ ex);
+//        }
+//   }
+     
+    public void listarComidasPorDieta(String nombreDieta){
+        
+        String sql = "SELECT idComida FROM dietacomida WHERE idDieta=?";
     
     
-}
+    
+    }
+   }
+    
+    
+ 
