@@ -23,10 +23,10 @@ public class DietaComidaData {
          try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
-            ps.setInt(1, dietacomida.getIdDC());
-            ps.setInt(2, dietacomida.getIdComida());
-            ps.setInt(3, dietacomida.getIdDieta());
-            ps.setBoolean(4, dietacomida.isEstado());
+           
+            ps.setInt(1, dietacomida.getIdComida());
+            ps.setInt(2, dietacomida.getIdDieta());
+            ps.setBoolean(3, dietacomida.isEstado());
 
             ps.executeUpdate();
 
