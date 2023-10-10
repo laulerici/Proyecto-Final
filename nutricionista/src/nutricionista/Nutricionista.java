@@ -55,12 +55,30 @@ public class Nutricionista {
 
         }
 */
-  
-  for (Consulta consulta : consultaD.listarPesos(2)) {
+  /*
+        for (Consulta consulta : consultaD.listarPesos(2)) {
             
             System.out.println("peso "+consulta.getPeso());
+            System.out.println("fecha"+consulta.getFecha());
            
         }
+*/
+/*  
+  for (Comida comida : comidaD.ordenarComidaXCalorias()) {
+            
+            System.out.println("nombre: "+comida.getNombre());
+            System.out.println("calorias: "+comida.getCantCalorias());
+            System.out.println("detalle: "+comida.getDetalle());
     }
+*/
 
+for (Comida comida : comidaD.listarComidasPorDieta(1)) {
+            
+            System.out.println("nombre: "+comida.getNombre());
+            System.out.println("calorias: "+comida.getCantCalorias());
+            System.out.println("detalle: "+comida.getDetalle());
+    }
+    
 }
+}
+

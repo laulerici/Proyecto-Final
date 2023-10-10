@@ -59,7 +59,7 @@ public class ConsultaData {
     
     public ArrayList<Consulta> listarPesos(int idPaciente) {
 
-        String sql = "SELECT peso FROM consulta WHERE idPaciente=?";
+        String sql = "SELECT fecha,peso FROM consulta WHERE idPaciente=?";
 
         ArrayList<Consulta> listaPesos = new ArrayList<>();
         
@@ -72,6 +72,7 @@ public class ConsultaData {
             while(rs.next()){
                 Consulta consulta = new Consulta();
                 
+                consulta.setFecha(rs.getDate("fecha").toLocalDate());
                 consulta.setPeso(rs.getDouble("peso"));
                 listaPesos.add(consulta);
             }
