@@ -19,17 +19,19 @@ public class Nutricionista {
       ComidaData comidaD = new ComidaData();
       DietaData dietaD = new DietaData();
       DietaComidaData dietacomidaD=new DietaComidaData();
+      ConsultaData consultaD = new ConsultaData();
       
-      Paciente paciente = new Paciente(3,"Claudio Facundo", "Suarez", "LaMadrid 13", 37457682,"123456567",true);
-      Comida comida = new Comida(2,"empanada de verduras", "disco de masa con vegetales", 115, true);
-      Dieta dieta = new Dieta("Dieta de la Luna", 2, LocalDate.of(2023,9,1), LocalDate.of(2023,10, 1), 80, 70, true);
-      DietaComida dietacomida = new DietaComida(1,4,true);
-      
+        Paciente paciente = new Paciente(4, "Claudio Facundo", "Suarez", "LaMadrid 13", 37457682, "123456567", true);
+      //  Comida comida = new Comida(2, "sushi", "roll de salmón ahumado con queso Philadelfia", 150, true);
+        Dieta dieta = new Dieta("Dieta de la Luna", 2, LocalDate.of(2023, 9, 1), LocalDate.of(2023, 10, 1), 80, 70, true);
+        DietaComida dietacomida = new DietaComida(3, 1, true);
+       // Consulta consulta = new Consulta(1, LocalDate.of(2022, 8, 13), 72, 185, 15, pacienteD.buscarPacienteXId(2)); //hacer metodo para buscar paciente por id
+
       //pacienteD.altaPaciente(paciente);
       //pacienteD.bajaPacienteAp("Diaz");
       //pacienteD.modificarPaciente(paciente);
      
-       comidaD.altaComida(comida);
+       //comidaD.altaComida(comida);
       //comidaD.bajaComidaN("arroz amarillo");
       //comidaD.modificarComida(comida);
       
@@ -37,10 +39,28 @@ public class Nutricionista {
       //dietaD.bajaDietaN("Dieta Keto");
       //dietaD.modificarDieta(dieta);
       
-      //dietacomidaD.altaDietaComida(dietacomida);
+    //dietacomidaD.agregarComidaADieta(dietacomida);
+  //consultaD.agregarConsutla(consulta);
     
+   
+    //System.out.println(pacienteD.buscarPacienteXId(1));
+   //System.out.println(pacienteD.buscarPacienteXApellido("Diaz"));
+  /*
+        for (Comida comida : comidaD.listarComidaXCal(500)) {
+            
+            System.out.println("idComida "+comida.getIdComida());
+            System.out.println("nombre " + comida.getNombre());
+            System.out.println("detalle " + comida.getDetalle());
+            System.out.println("Calorias " + comida.getCantCalorias());
+
+        }
+*/
+  
+  for (Consulta consulta : consultaD.listarPesos(2)) {
+            
+            System.out.println("peso "+consulta.getPeso());
+           
+        }
     }
-    
-    
-    
+
 }

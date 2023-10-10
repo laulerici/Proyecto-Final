@@ -117,8 +117,69 @@ public class PacienteData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error "+ ex);
         }
-        
-        
+   
     }
     
+    public Paciente buscarPacienteXId(int idPaciente) {
+
+        String sql = "SELECT * FROM paciente WHERE estado = 1 AND idPaciente = ?";
+
+        Paciente paciente = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idPaciente);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+
+                paciente = new Paciente();
+                paciente.setIdPaciente(idPaciente);
+                paciente.setNombre(rs.getString("nombre"));
+                paciente.setApellido(rs.getString("apellido"));
+                paciente.setDomicilio(rs.getString("domicilio"));
+                paciente.setDni(rs.getInt("dni"));
+                paciente.setTelef(rs.getString("telefono"));
+                paciente.setEstado(rs.getBoolean("estado"));
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Paciente inexistente");
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error " + ex);
+        }
+        return paciente;
+    }
+    
+    public Paciente buscarPacienteXApellido(String apellido) {
+
+        String sql = "SELECT * FROM paciente WHERE estado = 1 AND apellido = ?";
+
+        Paciente paciente = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, apellido);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+
+                paciente = new Paciente();
+                paciente.setApellido(apellido);
+                paciente.setIdPaciente(rs.getInt("idPaciente"));
+                paciente.setNombre(rs.getString("nombre"));
+                paciente.setDomicilio(rs.getString("domicilio"));
+                paciente.setDni(rs.getInt("dni"));
+                paciente.setTelef(rs.getString("telefono"));
+                paciente.setEstado(rs.getBoolean("estado"));
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Paciente inexistente");
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error " + ex);
+        }
+        return paciente;
+    }
+
 }

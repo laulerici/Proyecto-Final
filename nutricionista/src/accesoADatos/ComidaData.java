@@ -7,6 +7,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
 
@@ -67,8 +70,7 @@ public class ComidaData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error "+ ex);
         }
-        
-    }
+   }
     
      public void modificarComida (Comida comida){
         
@@ -96,4 +98,35 @@ public class ComidaData {
     }
          public void buscarComidaxDieta (Comida comida){
          }
+         
+        public ArrayList<Comida> listarComidaXCal(int cantCalorias) {
+
+        String sql = "SELECT * FROM comida WHERE cantCalorias<?";
+        ArrayList<Comida> listaComida = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, cantCalorias);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Comida comida = new Comida();
+
+                comida.setIdComida(rs.getInt("idComida"));
+                comida.setNombre(rs.getString("nombre"));
+                comida.setDetalle(rs.getString("detalle"));
+                comida.setCantCalorias(rs.getInt("cantCalorias"));
+                comida.setEstado(rs.getBoolean("estado"));
+
+                listaComida.add(comida);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error" + ex);
+        }
+        return listaComida;
+    }
+
 }
