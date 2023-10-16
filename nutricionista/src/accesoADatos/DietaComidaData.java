@@ -16,6 +16,7 @@ import org.mariadb.jdbc.Statement;
 
 public class DietaComidaData {
     private Connection con = null;
+   
 
     public DietaComidaData() {
         con = Conexion.conectar("nutricionista");
@@ -40,7 +41,7 @@ public class DietaComidaData {
 
                dietacomida.setIdDieta(rs.getInt(1));
 
-                JOptionPane.showMessageDialog(null, "Dieta Comida ingresada correctamente");
+                JOptionPane.showMessageDialog(null, "Comida ingresada correctamente");
 
             }
 
@@ -50,17 +51,19 @@ public class DietaComidaData {
             JOptionPane.showMessageDialog(null, "Error " + ex);
         }
     }
-    
-    public ArrayList<Comida> listarComidasPorDieta(int idDieta){
-        
-        String sql = "SELECT comida.nombre, comida.detalle, comida.cantCalorias" 
-                +"FROM dietacomida , comida  WHERE dietacomida.idComida = comida.idComida and idDieta = ?";
-        
+
+       
+    public ArrayList<Comida> listarComidasPorDieta(int idDieta) {
+
+        String sql = "SELECT comida.nombre, detalle, cantCalorias FROM dietacomida,"
+                + " comida WHERE dietacomida.idComida = comida.idComida and idDieta = ?";
+
+
         ArrayList<Comida> listaComidaXDieta = new ArrayList<>();
-        
+
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            
+
             ps.setInt(1, idDieta);
             ResultSet rs = ps.executeQuery();
 
@@ -70,42 +73,75 @@ public class DietaComidaData {
                 comida.setNombre(rs.getString("nombre"));
                 comida.setDetalle(rs.getString("detalle"));
                 comida.setCantCalorias(rs.getInt("cantCalorias"));
-                
 
                 listaComidaXDieta.add(comida);
             }
-            ps.close(); 
-            
+            ps.close();
+
         } catch (SQLException ex) {
-            
+
             JOptionPane.showMessageDialog(null, "Error " + ex);
         }
-        
+
         return listaComidaXDieta;
-    
-    
-    
+
     }
-    
-  /*
-    public void sumarCaloriasXDieta (int idDieta){
-       
-       String sql  = "SELECT SUM(cantCalorias) FROM dietacomida, comida "
-               + "WHERE dietacomida.idComida=comida.idComida AND idDieta = ?";
-       
+
+     public ArrayList<Comida> listarComidaXCal(int cantCalorias) {
+
+        String sql = "SELECT * FROM comida WHERE cantCalorias<?";
+        ArrayList<Comida> listaComida = new ArrayList<>();
+
         try {
-            PreparedStatement ps= con.prepareStatement(sql);
-            ps.setInt(1, idDieta);
-            
-           for (Comida comida:comidaD.)
-            
-            
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, cantCalorias);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Comida comida = new Comida();
+
+                comida.setIdComida(rs.getInt("idComida"));
+                comida.setNombre(rs.getString("nombre"));
+                comida.setDetalle(rs.getString("detalle"));
+                comida.setCantCalorias(rs.getInt("cantCalorias"));
+                comida.setEstado(rs.getBoolean("estado"));
+
+                listaComida.add(comida);
+            }
+            ps.close();
+
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error" + ex);
         }
-       
-       
-   } 
-    */
+        return listaComida;
+    }
+
     
+    public void sumarCaloriasXDieta(int idDieta) {
+
+        String sql = "SELECT SUM(cantCalorias) FROM dietacomida, comida "
+                + "WHERE dietacomida.idComida=comida.idComida AND idDieta = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idDieta);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                int sumaCalorias = rs.getInt(1);
+                System.out.println("La suma de las calorías es: " + sumaCalorias);
+
+            } else {
+                System.out.println("La dieta no tiene ninguna comida");
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DietaComidaData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 }
+
+

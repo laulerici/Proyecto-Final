@@ -156,7 +156,7 @@ public class ComidaData {
         return listaComida;
     }
 
-    public ArrayList<Comida> listarComidasPorDieta(int idDieta) {
+    public ArrayList<Comida> listarComidasPorDieta(int idDieta) { // método con error VER!!!
 
         String sql = "SELECT comida.nombre, comida.detalle, comida.cantCalorias"
                 + "FROM dietacomida , comida  WHERE dietacomida.idComida = comida.idComida and idDieta = ?";
