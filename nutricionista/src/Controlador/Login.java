@@ -1,117 +1,127 @@
 package Controlador;
 
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import sun.util.logging.PlatformLogger;
 
-
-public class Login extends javax.swing.JInternalFrame {
-
+public class Login extends javax.swing.JFrame {
 
     public Login() {
         initComponents();
     }
 
-    private void IngresarSistema(String usuario, String password) {
+    public void IngresarSistema(String usuario, String password) {
 
         String capturar = "";
         String sql = "SELECT * FROM usuarios where usuario= '" + usuario + "'  && password= '" + password + "'";
-        
+
         try {
-            
+
             Statement st = objconect.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
-            while (result.next()) {
-                capturar = result.getString("tipoUsuario");
+            while (rs.next()) {
+                capturar = rs.getString("tipoUsuario");
 
             }
             if (capturar.equals("ADMINISTRADOR")) {
                 this.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
-                //VentanaPrincipal objVP = new VentanaPrincipal();
+                VentanaPrincipal objVP = new VentanaPrincipal();
 
-                //objVP.setVisible(true);
-                //objVP.pack();
-                //VentanaPrincipal.lbUsuario.setText(usuario);
+                objVP.setVisible(true);
+                objVP.pack();
+                VentanaPrincipal.lbUsuario.setText(usuario);
             }
             if (capturar.equals("BASICO")) {
                 this.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
-               // VentanaPrincipal objVP = new VentanaPrincipal();
-                //objVP.setVisible(true);
-                //objVP.pack();
-                //VentanaPrincipal.lbUsuario.setText(usuario);
+                VentanaPrincipal objVP = new VentanaPrincipal();
+                objVP.setVisible(true);
+                objVP.pack();
+                VentanaPrincipal.lbUsuario.setText(usuario);
                 //VentanaPrincipal.jmnAdministracion.setEnabled(falso); limito el ingreso a reportes
                 //VentanaPrincipal.jmnReportes.setEnabled(false);
             }
-            
-            
-            
-            
-            if ((!capturar.equals("ADMINISTRADOR")) && (!capturar.equals("BASICO")) );
+
+            if ((!capturar.equals("ADMINISTRADOR")) && (!capturar.equals("BASICO")));
+
             JOptionPane.showMessageDialog(this, "El tipo de Usuario no es valido");
+
+        } catch (SQLException ex) {
+
+            Logger.getLogger(AccesoLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    }catch (SQLException ex){
-        Logger.getLogger(AccesoLogin.class.getName()).log(Level.SEVERE,null, ex);
-        
-    
     }
-
-
-    }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLacceso = new javax.swing.JLabel();
-        jLusuario = new javax.swing.JLabel();
-        jLpassword = new javax.swing.JLabel();
-        jTuser = new javax.swing.JTextField();
-        jTpass = new javax.swing.JTextField();
-        jBingresar = new javax.swing.JButton();
-        jBsalir = new javax.swing.JButton();
-        jCocultar = new javax.swing.JCheckBox();
-        jBlimpiar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lbUsuario = new javax.swing.JLabel();
+        lbPassword = new javax.swing.JLabel();
+        textUser = new javax.swing.JTextField();
+        textPass = new javax.swing.JTextField();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jbIngresar = new javax.swing.JButton();
+        jbLimpiar = new javax.swing.JButton();
+        jbSalir = new javax.swing.JButton();
 
-        jLacceso.setText("Acceso al Sistema");
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLusuario.setText("Usuario");
+        jLabel1.setFont(new java.awt.Font("DialogInput", 1, 15)); // NOI18N
+        jLabel1.setText("Acceso al Sistema");
 
-        jLpassword.setText("Password");
+        lbUsuario.setText("Usuario");
 
-        jTuser.addActionListener(new java.awt.event.ActionListener() {
+        lbPassword.setText("Password");
+
+        textUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTuserActionPerformed(evt);
+                textUserActionPerformed(evt);
             }
         });
 
-        jBingresar.setText("Ingresar");
-        jBingresar.addActionListener(new java.awt.event.ActionListener() {
+        textPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBingresarActionPerformed(evt);
+                textPassActionPerformed(evt);
             }
         });
 
-        jBsalir.setText("Salir");
-        jBsalir.addActionListener(new java.awt.event.ActionListener() {
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBsalirActionPerformed(evt);
+                jCheckBox1ActionPerformed(evt);
             }
         });
 
-        jBlimpiar.setText("Limpiar");
-        jBlimpiar.addActionListener(new java.awt.event.ActionListener() {
+        jbIngresar.setText("Ingresar");
+        jbIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jbIngresarMouseClicked(evt);
+            }
+        });
+        jbIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBlimpiarActionPerformed(evt);
+                jbIngresarActionPerformed(evt);
+            }
+        });
+
+        jbLimpiar.setText("Limpiar");
+        jbLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbLimpiarActionPerformed(evt);
+            }
+        });
+
+        jbSalir.setText("Salir");
+        jbSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbSalirActionPerformed(evt);
             }
         });
 
@@ -120,93 +130,137 @@ public class Login extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(jBingresar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addComponent(jBlimpiar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                        .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLpassword))
-                        .addGap(34, 34, 34)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLacceso)
-                            .addComponent(jTuser, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTpass, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(28, 28, 28)
-                        .addComponent(jCocultar)))
-                .addGap(63, 63, 63))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jbIngresar)
+                                .addGap(58, 58, 58)
+                                .addComponent(jbLimpiar)
+                                .addGap(48, 48, 48)
+                                .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(textUser, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lbPassword))
+                                        .addGap(34, 34, 34)
+                                        .addComponent(textPass, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCheckBox1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(114, 114, 114)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLacceso)
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLusuario)
-                    .addComponent(jTuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCocultar, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbUsuario)
+                    .addComponent(textUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbPassword)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                        .addComponent(textPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCheckBox1)))
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBingresar)
-                    .addComponent(jBsalir)
-                    .addComponent(jBlimpiar))
-                .addGap(51, 51, 51))
+                    .addComponent(jbIngresar)
+                    .addComponent(jbLimpiar)
+                    .addComponent(jbSalir))
+                .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBingresarActionPerformed
-     String usu = jTuser.getText();
-    // String pass = new String(jTpass.getPassword());
-     //IngresarSistema
-     
+    private void textPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textPassActionPerformed
+
+    private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
+        if(JOptionPane.showConfirmDialog(null, "¿Desea salir del Sistema?", "Acceso", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jbSalirActionPerformed
+
+    private void jbLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbLimpiarActionPerformed
+        textUser.setText("");
+        textPass.setText("");
+    }//GEN-LAST:event_jbLimpiarActionPerformed
+
+    private void jbIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIngresarActionPerformed
+        String usu = textUser.getText();
+        String pas = textPass.getSelectedText();
         
+        IngresarSistema (usu, pas);
+    }//GEN-LAST:event_jbIngresarActionPerformed
 
-
-    }//GEN-LAST:event_jBingresarActionPerformed
-
-    private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
+    private void textUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBsalirActionPerformed
+    }//GEN-LAST:event_textUserActionPerformed
 
-    private void jTuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTuserActionPerformed
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTuserActionPerformed
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
 
-    private void jBlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBlimpiarActionPerformed
+    private void jbIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbIngresarMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBlimpiarActionPerformed
+    }//GEN-LAST:event_jbIngresarMouseClicked
 
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Login().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBingresar;
-    private javax.swing.JButton jBlimpiar;
-    private javax.swing.JButton jBsalir;
-    private javax.swing.JCheckBox jCocultar;
-    private javax.swing.JLabel jLacceso;
-    private javax.swing.JLabel jLpassword;
-    private javax.swing.JLabel jLusuario;
-    private javax.swing.JTextField jTpass;
-    private javax.swing.JTextField jTuser;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jbIngresar;
+    private javax.swing.JButton jbLimpiar;
+    private javax.swing.JButton jbSalir;
+    private javax.swing.JLabel lbPassword;
+    private javax.swing.JLabel lbUsuario;
+    private javax.swing.JTextField textPass;
+    private javax.swing.JTextField textUser;
     // End of variables declaration//GEN-END:variables
-
-
 }
-}
-}
-
-
-    
-
