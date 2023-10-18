@@ -172,4 +172,23 @@ public class ConsultaData {
 //
 //    }
 
+       /* public ArrayList<Consulta> listarPesos(int dni) {
+
+        String sql = "SELECT fecha,peso FROM consulta WHERE idPaciente=?";
+
+        ArrayList<Consulta> listaPesos = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, idPaciente);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Consulta consulta = new Consulta();
+
+                consulta.setFecha(rs.getDate("fecha").toLocalDate());
+                consulta.setPeso(rs.getDouble("peso"));
+                listaPesos.add(consulta);
+            }*/
 }

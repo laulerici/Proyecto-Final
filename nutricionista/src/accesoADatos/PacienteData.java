@@ -182,4 +182,34 @@ public class PacienteData {
         return paciente;
     }
 
+    public Paciente buscarPacienteXdni(int dni) {
+
+        String sql = "SELECT * FROM paciente WHERE estado = 1 AND dni = ?";
+
+        Paciente paciente = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, dni);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+
+                paciente = new Paciente();
+                paciente.setIdPaciente(dni);
+                paciente.setNombre(rs.getString("nombre"));
+                paciente.setApellido(rs.getString("apellido"));
+                paciente.setDomicilio(rs.getString("domicilio"));
+                
+                paciente.setTelef(rs.getString("telefono"));
+                paciente.setEstado(rs.getBoolean("estado"));
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Paciente inexistente");
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error " + ex);
+        }
+        return paciente;
+    }
 }
