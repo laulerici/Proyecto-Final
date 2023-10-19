@@ -28,7 +28,7 @@ public class Conexion {
             try {
                 Class.forName("org.mariadb.jdbc.Driver");
                 con = DriverManager.getConnection(url + bd, usuario, pass);
-               // JOptionPane.showMessageDialog(null, "Conexión exitosa a la base de datos " + bd);
+               JOptionPane.showMessageDialog(null, "Conectado!!" + bd);
 
                 //System.out.println("Conexión exitosa a base de datos " + bd);
             } catch (ClassNotFoundException | SQLException ex) {

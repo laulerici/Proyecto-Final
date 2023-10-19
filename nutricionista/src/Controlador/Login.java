@@ -1,16 +1,25 @@
 package Controlador;
 
+import accesoADatos.Conexion;
+import java.awt.Frame;
+import java.awt.PopupMenu;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
+    
+    private Connection con = null;
+    
 
     public Login() {
         initComponents();
+        con = Conexion.conectar("nutricionista");
     }
 
     public void IngresarSistema(String usuario, String password) {
@@ -66,40 +75,41 @@ public class Login extends javax.swing.JFrame {
         lbUsuario = new javax.swing.JLabel();
         lbPassword = new javax.swing.JLabel();
         textUser = new javax.swing.JTextField();
-        textPass = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
         jbIngresar = new javax.swing.JButton();
         jbLimpiar = new javax.swing.JButton();
         jbSalir = new javax.swing.JButton();
+        textPass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("DialogInput", 1, 15)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel1.setText("Acceso al Sistema");
 
+        lbUsuario.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         lbUsuario.setText("Usuario");
 
+        lbPassword.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         lbPassword.setText("Password");
 
+        textUser.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        textUser.setBorder(null);
         textUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textUserActionPerformed(evt);
             }
         });
 
-        textPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textPassActionPerformed(evt);
-            }
-        });
-
+        jCheckBox1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ver_32px.png"))); // NOI18N
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);
             }
         });
 
+        jbIngresar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jbIngresar.setText("Ingresar");
+        jbIngresar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jbIngresarMouseClicked(evt);
@@ -111,80 +121,82 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        jbLimpiar.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jbLimpiar.setText("Limpiar");
+        jbLimpiar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbLimpiarActionPerformed(evt);
             }
         });
 
+        jbSalir.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jbSalir.setText("Salir");
+        jbSalir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbSalirActionPerformed(evt);
             }
         });
 
+        textPass.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
+        textPass.setBorder(null);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
+                        .addComponent(jbIngresar)
+                        .addGap(47, 47, 47)
+                        .addComponent(jbLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lbPassword))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jbIngresar)
-                                .addGap(58, 58, 58)
-                                .addComponent(jbLimpiar)
-                                .addGap(48, 48, 48)
-                                .addComponent(jbSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(textUser, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lbUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(lbPassword))
-                                        .addGap(34, 34, 34)
-                                        .addComponent(textPass, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(7, 7, 7)
+                                .addComponent(textPass, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox1))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textUser, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbUsuario)
-                    .addComponent(textUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                    .addComponent(textUser, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lbPassword)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(textPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jCheckBox1)))
-                .addGap(43, 43, 43)
+                        .addComponent(lbPassword)
+                        .addComponent(textPass, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCheckBox1))
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbIngresar)
                     .addComponent(jbLimpiar)
                     .addComponent(jbSalir))
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void textPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textPassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textPassActionPerformed
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
         if(JOptionPane.showConfirmDialog(null, "¿Desea salir del Sistema?", "Acceso", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION){
@@ -198,22 +210,40 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jbLimpiarActionPerformed
 
     private void jbIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIngresarActionPerformed
+       
         String usu = textUser.getText();
-        String pas = textPass.getSelectedText();
+        String pas = new String(textPass.getPassword());
         
         IngresarSistema (usu, pas);
+        
+        MenuPrincipal objMP = new MenuPrincipal("Menu Principal", true);
+        objMP.setVisible(true);
+        MenuPrincipal.getDefaultLocale();
+        //PopupMenu MenuPrincipal = null;
+        //Login.getContentPane().add(MenuPrincipal);
+        //Login.getFrames().equals(objMP);
+
     }//GEN-LAST:event_jbIngresarActionPerformed
 
     private void textUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUserActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_textUserActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         
+        if (jCheckBox1.isSelected()) {
+            textPass.setEchoChar((char) 0);
+            System.out.println("Activado");
+        } else {
+           
+            textPass.setEchoChar('*');
+            System.out.println("Desactivado");
+        }
+        
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jbIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbIngresarMouseClicked
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jbIngresarMouseClicked
 
     /**
@@ -260,7 +290,9 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton jbSalir;
     private javax.swing.JLabel lbPassword;
     private javax.swing.JLabel lbUsuario;
-    private javax.swing.JTextField textPass;
+    private javax.swing.JPasswordField textPass;
     private javax.swing.JTextField textUser;
     // End of variables declaration//GEN-END:variables
+
+ 
 }

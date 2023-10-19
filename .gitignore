@@ -23,3 +23,6 @@
 hs_err_pid*
 replay_pid*
 /nutricionista/dist/
+*.form
+nutricionista/src/Controlador/Login1.form
+*.java

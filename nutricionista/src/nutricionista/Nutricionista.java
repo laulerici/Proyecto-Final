@@ -79,6 +79,6 @@ for (Comida comida : dietaComidaD.listarComidasPorDieta(2)) {
          */
         // dietaComidaD.sumarCaloriasXDieta(4);
         // consultaD.calculoImc(1.68, 60);
-        consultaD.modificarConsulta(consulta);
+        //consultaD.modificarConsulta(consulta);
     }
 }
