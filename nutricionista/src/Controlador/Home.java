@@ -42,6 +42,7 @@ public class Home extends javax.swing.JFrame {
         Button_Min = new javax.swing.JLabel();
         Panel_Close = new javax.swing.JPanel();
         Button_Close = new javax.swing.JLabel();
+        escritorio = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -59,7 +60,6 @@ public class Home extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PanelPrincipal.setBackground(new java.awt.Color(255, 255, 255));
-        PanelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BarraLateral.setBackground(new java.awt.Color(204, 204, 255));
         BarraLateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,7 +69,7 @@ public class Home extends javax.swing.JFrame {
         Button_Mi_Info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/usuario48.png"))); // NOI18N
         Button_Mi_Info.setText("Ver mi Información");
         Button_Mi_Info.setToolTipText("");
-        Button_Mi_Info.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Mi_Info.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Mi_Info.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Button_Mi_Info.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         BarraLateral.add(Button_Mi_Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, -1));
@@ -80,7 +80,7 @@ public class Home extends javax.swing.JFrame {
         Button_Vender.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         Button_Vender.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Button_Vender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/vender-stock-35.png"))); // NOI18N
-        Button_Vender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Vender.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Vender.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_VenderMouseClicked(evt);
@@ -102,7 +102,7 @@ public class Home extends javax.swing.JFrame {
         Button_Proveedor.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         Button_Proveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Button_Proveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/proveedor-35.png"))); // NOI18N
-        Button_Proveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Proveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Proveedor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_ProveedorMouseClicked(evt);
@@ -124,7 +124,7 @@ public class Home extends javax.swing.JFrame {
         Button_Documentos.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         Button_Documentos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Button_Documentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/documento-35.png"))); // NOI18N
-        Button_Documentos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Documentos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Documentos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_DocumentosMouseClicked(evt);
@@ -146,7 +146,7 @@ public class Home extends javax.swing.JFrame {
         Button_Ajustes.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         Button_Ajustes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Button_Ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ajustes-35.png"))); // NOI18N
-        Button_Ajustes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Ajustes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Ajustes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_AjustesMouseClicked(evt);
@@ -169,7 +169,7 @@ public class Home extends javax.swing.JFrame {
         Button_Busqueda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Button_Busqueda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/búsqueda-35.png"))); // NOI18N
         Button_Busqueda.setToolTipText("");
-        Button_Busqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Busqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Busqueda.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_BusquedaMouseClicked(evt);
@@ -191,7 +191,7 @@ public class Home extends javax.swing.JFrame {
         Button_info.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         Button_info.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Button_info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/información-35.png"))); // NOI18N
-        Button_info.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_info.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_info.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_infoMouseClicked(evt);
@@ -214,7 +214,7 @@ public class Home extends javax.swing.JFrame {
         Button_Exit.setForeground(new java.awt.Color(255, 255, 255));
         Button_Exit.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Button_Exit.setText("Salir");
-        Button_Exit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Exit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Exit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_ExitMouseClicked(evt);
@@ -235,9 +235,12 @@ public class Home extends javax.swing.JFrame {
 
         Button_Home.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         Button_Home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Button_Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/windows-35.png"))); // NOI18N
-        Button_Home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/pacientefem.png"))); // NOI18N
+        Button_Home.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_HomeMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 Button_HomeMouseEntered(evt);
             }
@@ -249,28 +252,24 @@ public class Home extends javax.swing.JFrame {
 
         BarraLateral.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 210, 40));
 
-        PanelPrincipal.add(BarraLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 600));
-
         PanelContenedor.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout PanelContenedorLayout = new javax.swing.GroupLayout(PanelContenedor);
         PanelContenedor.setLayout(PanelContenedorLayout);
         PanelContenedorLayout.setHorizontalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGap(0, 588, Short.MAX_VALUE)
         );
         PanelContenedorLayout.setVerticalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 588, Short.MAX_VALUE)
         );
-
-        PanelPrincipal.add(PanelContenedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 590, 530));
 
         Panel_Min.setBackground(new java.awt.Color(255, 255, 255));
 
         Button_Min.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Button_Min.setText("—");
-        Button_Min.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Min.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Min.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_MinMouseClicked(evt);
@@ -291,16 +290,14 @@ public class Home extends javax.swing.JFrame {
         );
         Panel_MinLayout.setVerticalGroup(
             Panel_MinLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Button_Min, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(Button_Min, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
-
-        PanelPrincipal.add(Panel_Min, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 0, -1, 30));
 
         Panel_Close.setBackground(new java.awt.Color(255, 255, 255));
 
         Button_Close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Button_Close.setText("x");
-        Button_Close.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Button_Close.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Close.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Button_CloseMouseClicked(evt);
@@ -324,110 +321,57 @@ public class Home extends javax.swing.JFrame {
             .addComponent(Button_Close, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        PanelPrincipal.add(Panel_Close, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 0, -1, -1));
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 483, Short.MAX_VALUE)
+        );
 
-        getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 600));
+        javax.swing.GroupLayout PanelPrincipalLayout = new javax.swing.GroupLayout(PanelPrincipal);
+        PanelPrincipal.setLayout(PanelPrincipalLayout);
+        PanelPrincipalLayout.setHorizontalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                .addComponent(BarraLateral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                        .addGap(530, 530, 530)
+                        .addComponent(Panel_Min, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(Panel_Close, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(escritorio)
+                            .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
+        );
+        PanelPrincipalLayout.setVerticalGroup(
+            PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(BarraLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PanelPrincipalLayout.createSequentialGroup()
+                        .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Panel_Close, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Panel_Min, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(14, 14, 14)
+                        .addComponent(escritorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(PanelContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Button_ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ExitMouseClicked
-        if(MouseEvent.BUTTON1 == evt.getButton()){
-            System.exit(0);
-        }
-    }//GEN-LAST:event_Button_ExitMouseClicked
-
-    private void Button_VenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_VenderMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_VenderMouseClicked
-
-    private void Button_ProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ProveedorMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_ProveedorMouseClicked
-
-    private void Button_DocumentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_DocumentosMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_DocumentosMouseClicked
-
-    private void Button_AjustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_AjustesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_AjustesMouseClicked
-
-    private void Button_BusquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_BusquedaMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_BusquedaMouseClicked
-
-    private void Button_infoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_infoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_infoMouseClicked
-
-    private void Button_VenderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_VenderMouseEntered
-        jPanel1.setBackground(Color.lightGray);
-        Button_Vender.setText("Realizar una venta");
-    }//GEN-LAST:event_Button_VenderMouseEntered
-
-    private void Button_VenderMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_VenderMouseExited
-        jPanel1.setBackground(new Color(204,204,255));
-        Button_Vender.setText("");
-    }//GEN-LAST:event_Button_VenderMouseExited
-
-    private void Button_ProveedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ProveedorMouseEntered
-        jPanel2.setBackground(Color.lightGray);
-        Button_Proveedor.setText("Proveedores");
-    }//GEN-LAST:event_Button_ProveedorMouseEntered
-
-    private void Button_ProveedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ProveedorMouseExited
-        jPanel2.setBackground(new Color(204,204,255));
-        Button_Proveedor.setText("");
-    }//GEN-LAST:event_Button_ProveedorMouseExited
-
-    private void Button_DocumentosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_DocumentosMouseEntered
-        jPanel3.setBackground(Color.lightGray);
-        Button_Documentos.setText("Documentación");
-    }//GEN-LAST:event_Button_DocumentosMouseEntered
-
-    private void Button_DocumentosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_DocumentosMouseExited
-        jPanel3.setBackground(new Color(204,204,255));
-        Button_Documentos.setText("");
-    }//GEN-LAST:event_Button_DocumentosMouseExited
-
-    private void Button_AjustesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_AjustesMouseEntered
-        jPanel4.setBackground(Color.lightGray);
-        Button_Ajustes.setText("Ajustes");
-    }//GEN-LAST:event_Button_AjustesMouseEntered
-
-    private void Button_AjustesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_AjustesMouseExited
-        jPanel4.setBackground(new Color(204,204,255));
-        Button_Ajustes.setText("");
-    }//GEN-LAST:event_Button_AjustesMouseExited
-
-    private void Button_BusquedaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_BusquedaMouseEntered
-        jPanel5.setBackground(Color.lightGray);
-        Button_Busqueda.setText("Busqueda");
-    }//GEN-LAST:event_Button_BusquedaMouseEntered
-
-    private void Button_BusquedaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_BusquedaMouseExited
-        jPanel5.setBackground(new Color(204,204,255));
-        Button_Busqueda.setText("");
-    }//GEN-LAST:event_Button_BusquedaMouseExited
-
-    private void Button_infoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_infoMouseEntered
-        jPanel6.setBackground(Color.lightGray);
-        Button_info.setText("Información");
-    }//GEN-LAST:event_Button_infoMouseEntered
-
-    private void Button_infoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_infoMouseExited
-        jPanel6.setBackground(new Color(204,204,255));
-        Button_info.setText("");
-    }//GEN-LAST:event_Button_infoMouseExited
-
-    private void Button_ExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ExitMouseEntered
-        Panel_Exit.setBackground(Color.red);
-    }//GEN-LAST:event_Button_ExitMouseEntered
-
-    private void Button_ExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ExitMouseExited
-        Panel_Exit.setBackground(new Color(102,0,0));
-    }//GEN-LAST:event_Button_ExitMouseExited
 
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
         MouseX = evt.getX();
@@ -440,11 +384,15 @@ public class Home extends javax.swing.JFrame {
         this.setLocation(X-MouseX, Y-MouseY);
     }//GEN-LAST:event_formMouseDragged
 
-    private void Button_MinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_MinMouseClicked
-        if(MouseEvent.BUTTON1 == evt.getButton()){
-            this.setState(Home.ICONIFIED);
-        }
-    }//GEN-LAST:event_Button_MinMouseClicked
+    private void Button_CloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_CloseMouseExited
+        Panel_Close.setBackground(Color.white);
+        Button_Close.setForeground(Color.black);
+    }//GEN-LAST:event_Button_CloseMouseExited
+
+    private void Button_CloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_CloseMouseEntered
+        Panel_Close.setBackground(Color.red);
+        Button_Close.setForeground(Color.white);
+    }//GEN-LAST:event_Button_CloseMouseEntered
 
     private void Button_CloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_CloseMouseClicked
         if(MouseEvent.BUTTON1 == evt.getButton()){
@@ -452,35 +400,136 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Button_CloseMouseClicked
 
-    private void Button_CloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_CloseMouseEntered
-        Panel_Close.setBackground(Color.red);
-        Button_Close.setForeground(Color.white);
-    }//GEN-LAST:event_Button_CloseMouseEntered
+    private void Button_MinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_MinMouseExited
+        Panel_Min.setBackground(Color.white);
+        Button_Min.setForeground(Color.black);
+    }//GEN-LAST:event_Button_MinMouseExited
 
     private void Button_MinMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_MinMouseEntered
         Panel_Min.setBackground(Color.lightGray);
         Button_Min.setForeground(Color.white);
     }//GEN-LAST:event_Button_MinMouseEntered
 
-    private void Button_CloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_CloseMouseExited
-        Panel_Close.setBackground(Color.white);
-        Button_Close.setForeground(Color.black);
-    }//GEN-LAST:event_Button_CloseMouseExited
-
-    private void Button_MinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_MinMouseExited
-        Panel_Min.setBackground(Color.white);
-        Button_Min.setForeground(Color.black);
-    }//GEN-LAST:event_Button_MinMouseExited
-
-    private void Button_HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_HomeMouseEntered
-        jPanel7.setBackground(Color.lightGray);
-        Button_Home.setText("Inicio");
-    }//GEN-LAST:event_Button_HomeMouseEntered
+    private void Button_MinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_MinMouseClicked
+        if(MouseEvent.BUTTON1 == evt.getButton()){
+            this.setState(Home.ICONIFIED);
+        }
+    }//GEN-LAST:event_Button_MinMouseClicked
 
     private void Button_HomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_HomeMouseExited
         jPanel7.setBackground(new Color(204,204,255));
         Button_Home.setText("");
     }//GEN-LAST:event_Button_HomeMouseExited
+
+    private void Button_HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_HomeMouseEntered
+        jPanel7.setBackground(Color.lightGray);
+        Button_Home.setText("Agregar Pacientes");
+    }//GEN-LAST:event_Button_HomeMouseEntered
+
+    private void Button_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_HomeMouseClicked
+        VistaAgregarPaciente agregar = new VistaAgregarPaciente ();
+        agregar.setVisible(true);
+        escritorio.add(agregar);
+        escritorio.moveToFront(agregar);
+    }//GEN-LAST:event_Button_HomeMouseClicked
+
+    private void Button_ExitMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ExitMouseExited
+        Panel_Exit.setBackground(new Color(102,0,0));
+    }//GEN-LAST:event_Button_ExitMouseExited
+
+    private void Button_ExitMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ExitMouseEntered
+        Panel_Exit.setBackground(Color.red);
+    }//GEN-LAST:event_Button_ExitMouseEntered
+
+    private void Button_ExitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ExitMouseClicked
+        if(MouseEvent.BUTTON1 == evt.getButton()){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_Button_ExitMouseClicked
+
+    private void Button_infoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_infoMouseExited
+        jPanel6.setBackground(new Color(204,204,255));
+        Button_info.setText("");
+    }//GEN-LAST:event_Button_infoMouseExited
+
+    private void Button_infoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_infoMouseEntered
+        jPanel6.setBackground(Color.lightGray);
+        Button_info.setText("Información");
+    }//GEN-LAST:event_Button_infoMouseEntered
+
+    private void Button_infoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_infoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_infoMouseClicked
+
+    private void Button_BusquedaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_BusquedaMouseExited
+        jPanel5.setBackground(new Color(204,204,255));
+        Button_Busqueda.setText("");
+    }//GEN-LAST:event_Button_BusquedaMouseExited
+
+    private void Button_BusquedaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_BusquedaMouseEntered
+        jPanel5.setBackground(Color.lightGray);
+        Button_Busqueda.setText("Busqueda");
+    }//GEN-LAST:event_Button_BusquedaMouseEntered
+
+    private void Button_BusquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_BusquedaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_BusquedaMouseClicked
+
+    private void Button_AjustesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_AjustesMouseExited
+        jPanel4.setBackground(new Color(204,204,255));
+        Button_Ajustes.setText("");
+    }//GEN-LAST:event_Button_AjustesMouseExited
+
+    private void Button_AjustesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_AjustesMouseEntered
+        jPanel4.setBackground(Color.lightGray);
+        Button_Ajustes.setText("Ajustes");
+    }//GEN-LAST:event_Button_AjustesMouseEntered
+
+    private void Button_AjustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_AjustesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_AjustesMouseClicked
+
+    private void Button_DocumentosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_DocumentosMouseExited
+        jPanel3.setBackground(new Color(204,204,255));
+        Button_Documentos.setText("");
+    }//GEN-LAST:event_Button_DocumentosMouseExited
+
+    private void Button_DocumentosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_DocumentosMouseEntered
+        jPanel3.setBackground(Color.lightGray);
+        Button_Documentos.setText("Documentación");
+    }//GEN-LAST:event_Button_DocumentosMouseEntered
+
+    private void Button_DocumentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_DocumentosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_DocumentosMouseClicked
+
+    private void Button_ProveedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ProveedorMouseExited
+        jPanel2.setBackground(new Color(204,204,255));
+        Button_Proveedor.setText("");
+    }//GEN-LAST:event_Button_ProveedorMouseExited
+
+    private void Button_ProveedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ProveedorMouseEntered
+        jPanel2.setBackground(Color.lightGray);
+        Button_Proveedor.setText("Proveedores");
+    }//GEN-LAST:event_Button_ProveedorMouseEntered
+
+    private void Button_ProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ProveedorMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_ProveedorMouseClicked
+
+    private void Button_VenderMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_VenderMouseExited
+        jPanel1.setBackground(new Color(204,204,255));
+        Button_Vender.setText("");
+    }//GEN-LAST:event_Button_VenderMouseExited
+
+    private void Button_VenderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_VenderMouseEntered
+        jPanel1.setBackground(Color.lightGray);
+        Button_Vender.setText("Realizar una venta");
+    }//GEN-LAST:event_Button_VenderMouseEntered
+
+    private void Button_VenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_VenderMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Button_VenderMouseClicked
 
    
     public static void main(String args[]) {
@@ -534,6 +583,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_Close;
     private javax.swing.JPanel Panel_Exit;
     private javax.swing.JPanel Panel_Min;
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
