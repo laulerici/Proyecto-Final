@@ -26,3 +26,9 @@ replay_pid*
 *.form
 nutricionista/src/Controlador/Login1.form
 *.java
+!/nutricionista/src/Controlador/Home.form
+!/nutricionista/src/Controlador/Home.java
+!/nutricionista/src/Controlador/LoginMySQL.java
+!/nutricionista/src/Controlador/Login_1.form
+!/nutricionista/src/Controlador/Login_1.java
+!/nutricionista/src/Controlador/TextPrompt.java
