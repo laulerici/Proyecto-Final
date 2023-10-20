@@ -172,23 +172,85 @@ public class ConsultaData {
 //
 //    }
 
+<<<<<<< Updated upstream
        /* public ArrayList<Consulta> listarPesos(int dni) {
 
         String sql = "SELECT fecha,peso FROM consulta WHERE idPaciente=?";
 
         ArrayList<Consulta> listaPesos = new ArrayList<>();
+=======
+    private Usuario usuario;
+            
+     public ArrayList<usuario> listaUsuarios() {
+
+        String sql = "SELECT usuario, password, tipoUsuario FROM usuarios";
+
+        ArrayList<Consulta> listaUsuario = new ArrayList<>();
+>>>>>>> Stashed changes
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 
+<<<<<<< Updated upstream
             ps.setInt(1, idPaciente);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
                 Consulta consulta = new Consulta();
+=======
+          
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Usuario Consulta consulta = new Consulta();
+>>>>>>> Stashed changes
 
                 consulta.setFecha(rs.getDate("fecha").toLocalDate());
                 consulta.setPeso(rs.getDouble("peso"));
                 listaPesos.add(consulta);
+<<<<<<< Updated upstream
             }*/
+=======
+            }
+
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error " + ex);
+        }
+        return listaPesos;
+
+    }
+
+    public ArrayList<Comida> listarComidaXCal(int cantCalorias) {
+
+        String sql = "SELECT * FROM comida WHERE cantCalorias<?";
+        ArrayList<Comida> listaComida = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, cantCalorias);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Comida comida = new Comida();
+
+                comida.setIdComida(rs.getInt("idComida"));
+                comida.setNombre(rs.getString("nombre"));
+                comida.setDetalle(rs.getString("detalle"));
+                comida.setCantCalorias(rs.getInt("cantCalorias"));
+                comida.setEstado(rs.getBoolean("estado"));
+
+                listaComida.add(comida);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error" + ex);
+        }
+        return listaComida;
+    }
+    
+    
+>>>>>>> Stashed changes
 }
