@@ -147,38 +147,38 @@ public class ConsultaData {
 
     }
 
-//    public void tendenciaPesos(int idPaciente) {
-//
-//        String sql = "SELECT fecha, peso FROM consulta WHERE idPaciente=1";
-//
-//        try {
-//            PreparedStatement ps = con.prepareStatement(sql);
-//
-//            ps.setInt(1, idPaciente);
-//            ResultSet rs = ps.executeQuery();
-//            
-//            XYSeries series = new XYSeries();
-//            
-//            while (rs.next()) {
-//                Date x = rs.getDate("fecha");
-//                double y = rs.getDouble("peso");
-//
-//                series.add(x, y);
-//            }
-//
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Error" + ex);
-//        }
-//
-//    }
+    public void tendenciaPesos(int idPaciente) {
 
-<<<<<<< Updated upstream
-       /* public ArrayList<Consulta> listarPesos(int dni) {
+        String sql = "SELECT fecha, peso FROM consulta WHERE idPaciente=1";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ps.setInt(1, idPaciente);
+            ResultSet rs = ps.executeQuery();
+            
+            XYSeries series = new XYSeries();
+            
+            while (rs.next()) {
+                Date x = rs.getDate("fecha");
+                double y = rs.getDouble("peso");
+
+                //series.add(x, y);
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error" + ex);
+        }
+
+    }
+    
+    /*
+    public ArrayList<Consulta> listarPesos(int dni) {
 
         String sql = "SELECT fecha,peso FROM consulta WHERE idPaciente=?";
 
         ArrayList<Consulta> listaPesos = new ArrayList<>();
-=======
+
     private Usuario usuario;
             
      public ArrayList<usuario> listaUsuarios() {
@@ -186,40 +186,39 @@ public class ConsultaData {
         String sql = "SELECT usuario, password, tipoUsuario FROM usuarios";
 
         ArrayList<Consulta> listaUsuario = new ArrayList<>();
->>>>>>> Stashed changes
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
 
-<<<<<<< Updated upstream
+
             ps.setInt(1, idPaciente);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
                 Consulta consulta = new Consulta();
-=======
+
           
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
                 Usuario Consulta consulta = new Consulta();
->>>>>>> Stashed changes
+
 
                 consulta.setFecha(rs.getDate("fecha").toLocalDate());
                 consulta.setPeso(rs.getDouble("peso"));
                 listaPesos.add(consulta);
-<<<<<<< Updated upstream
-            }*/
-=======
-            }
 
-            ps.close();
+            }
+}
+     ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error " + ex);
         }
         return listaPesos;
 
     }
+*/
+    /*
 
     public ArrayList<Comida> listarComidaXCal(int cantCalorias) {
 
@@ -252,5 +251,7 @@ public class ConsultaData {
     }
     
     
->>>>>>> Stashed changes
+*/
 }
+
+

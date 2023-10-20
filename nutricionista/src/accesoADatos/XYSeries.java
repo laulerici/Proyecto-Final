@@ -38,40 +38,40 @@ public class XYSeries {
 
     }
 
-    public void consultarUsuario(String user, String pass) {
-
-        String sql = "SELECT idUsuario, usuario, password, tipoUsuario FROM usuarios WHERE usuario ='" + user + "'";
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            ps.setString(1, user);
-
-            if (rs.next()) {
-                String U = rs.getString("usuario");
-                String P = rs.getString("password");
-                String priv = rs.getString("tipoUsuario");
-
-                if (user != U) {
-                }
-
-                if (pass.equals(P)) {
-                    if (priv.equals("BASICO")) {
-                        
-                        Cliente cliente = new Cliente();
-                        cliente.setLocationRelativeTo(null);
-                        cliente.setVisible(true);
-
-                    } else if (priv.equals("ADMINISTRADOR")) {
-                        Nutricionista nutri = new Nutricionista();
-                        nutri.setLocationRelativeTo(null);
-                        nutri.setVisible(true);
-
-                    }
-                }
-
-            }
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrecta");
-        }
-    }
+//    public void consultarUsuario(String user, String pass) {
+//
+//        String sql = "SELECT idUsuario, usuario, password, tipoUsuario FROM usuarios WHERE usuario ='" + user + "'";
+//        try {
+//            PreparedStatement ps = con.prepareStatement(sql);
+//            ResultSet rs = ps.executeQuery();
+//            ps.setString(1, user);
+//
+//            if (rs.next()) {
+//                String U = rs.getString("usuario");
+//                String P = rs.getString("password");
+//                String priv = rs.getString("tipoUsuario");
+//
+//                if (user != U) {
+//                }
+//
+//                if (pass.equals(P)) {
+//                    if (priv.equals("BASICO")) {
+//                        
+//                        Cliente cliente = new Cliente();
+//                        cliente.setLocationRelativeTo(null);
+//                        cliente.setVisible(true);
+//
+//                    } else if (priv.equals("ADMINISTRADOR")) {
+//                        Nutricionista nutri = new Nutricionista();
+//                        nutri.setLocationRelativeTo(null);
+//                        nutri.setVisible(true);
+//
+//                    }
+//                }
+//
+//            }
+//        } catch (SQLException ex) {
+//            JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrecta");
+//        }
+//    }
 }
