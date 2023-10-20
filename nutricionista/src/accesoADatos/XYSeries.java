@@ -28,11 +28,15 @@ public class XYSeries {
     }
 
     public void agregarUsuario(String usuario, String password) {
-        String sql = "insert int usuarios (usuario, password, tipoUsuario) VALUE (?,?)"; try {
+        String sql = "INSERT INTO usuarios (usuario, password) VALUE ('"+usuario+"', '"+password+"')"; 
+        
+        
+        try {
             PreparedStatement ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, usuario);
             ps.setString(2, password);
+            
             ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();
@@ -49,7 +53,7 @@ public class XYSeries {
         }
                             
 }
-        public void consultarUsuario (String user, String pass){
+     /*   public void consultarUsuario (String user, String pass){
          
         
         String sql = "SELECT idUsuario, usuario, password, tipoUsuario FROM usuarios WHERE usuario ='"+user+"'";
@@ -84,5 +88,5 @@ public class XYSeries {
        } catch (SQLException ex) {
           JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrecta");
        }
-}
+}*/
 }
