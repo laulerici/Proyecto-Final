@@ -1,21 +1,17 @@
 package Controlador;
 
 import accesoADatos.Conexion;
-import java.awt.Frame;
-import java.awt.PopupMenu;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
-    
+
     private Connection con = null;
-    
 
     public Login() {
         initComponents();
@@ -25,12 +21,21 @@ public class Login extends javax.swing.JFrame {
     public void IngresarSistema(String usuario, String password) {
 
         String capturar = "";
-        String sql = "SELECT * FROM usuarios where usuario= '" + usuario + "'  && password= '" + password + "'";
+        String sql = "SELECT * FROM usuarios";
 
         try {
 
-            Statement st = objconect.createStatement();
-            ResultSet rs = st.executeQuery(sql);
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, usuario);
+            ResultSet rs = ps.executeQuery(sql);
+            if (rs.next()) {
+
+                String user = rs.getString("usuario");
+                String pass = rs.getString("password");
+
+            } else {
+                System.out.println("Usuario no encontrado");
+            }
 
             while (rs.next()) {
                 capturar = rs.getString("tipoUsuario");
@@ -39,21 +44,22 @@ public class Login extends javax.swing.JFrame {
             if (capturar.equals("ADMINISTRADOR")) {
                 this.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
-                VentanaPrincipal objVP = new VentanaPrincipal();
+                Login objLG = new Login();
 
-                objVP.setVisible(true);
-                objVP.pack();
-                VentanaPrincipal.lbUsuario.setText(usuario);
+                objLG.setVisible(true);
+                objLG.pack();
+                objLG.lbUsuario.setText(usuario);
             }
             if (capturar.equals("BASICO")) {
                 this.setVisible(false);
                 JOptionPane.showMessageDialog(null, "Bienvenido al sistema");
-                VentanaPrincipal objVP = new VentanaPrincipal();
-                objVP.setVisible(true);
-                objVP.pack();
-                VentanaPrincipal.lbUsuario.setText(usuario);
+                Login objLG = new Login();
+
+                objLG.setVisible(true);
+                objLG.pack();
+                objLG.lbUsuario.setText(usuario);
+
                 //VentanaPrincipal.jmnAdministracion.setEnabled(falso); limito el ingreso a reportes
-                //VentanaPrincipal.jmnReportes.setEnabled(false);
             }
 
             if ((!capturar.equals("ADMINISTRADOR")) && (!capturar.equals("BASICO")));
@@ -62,7 +68,7 @@ public class Login extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
 
-            Logger.getLogger(AccesoLogin.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -199,7 +205,7 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalirActionPerformed
-        if(JOptionPane.showConfirmDialog(null, "¿Desea salir del Sistema?", "Acceso", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION){
+        if (JOptionPane.showConfirmDialog(null, "¿Desea salir del Sistema?", "Acceso", JOptionPane.YES_NO_CANCEL_OPTION) == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
     }//GEN-LAST:event_jbSalirActionPerformed
@@ -210,40 +216,34 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jbLimpiarActionPerformed
 
     private void jbIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbIngresarActionPerformed
-       
+
         String usu = textUser.getText();
         String pas = new String(textPass.getPassword());
-        
-        IngresarSistema (usu, pas);
-        
-        MenuPrincipal objMP = new MenuPrincipal("Menu Principal", true);
-        objMP.setVisible(true);
-        MenuPrincipal.getDefaultLocale();
-        //PopupMenu MenuPrincipal = null;
-        //Login.getContentPane().add(MenuPrincipal);
-        //Login.getFrames().equals(objMP);
+
+        IngresarSistema(usu, pas);
+
 
     }//GEN-LAST:event_jbIngresarActionPerformed
 
     private void textUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUserActionPerformed
-       
+
     }//GEN-LAST:event_textUserActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        
+
         if (jCheckBox1.isSelected()) {
             textPass.setEchoChar((char) 0);
             System.out.println("Activado");
         } else {
-           
+
             textPass.setEchoChar('*');
             System.out.println("Desactivado");
         }
-        
+
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jbIngresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbIngresarMouseClicked
-       
+
     }//GEN-LAST:event_jbIngresarMouseClicked
 
     /**
@@ -294,5 +294,4 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField textUser;
     // End of variables declaration//GEN-END:variables
 
- 
 }
