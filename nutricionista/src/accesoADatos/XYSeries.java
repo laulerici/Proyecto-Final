@@ -5,6 +5,8 @@
  */
 package accesoADatos;
 
+import Controlador.Cliente;
+import Controlador.Nutricionista;
 import entidades.Consulta;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -35,19 +37,52 @@ public class XYSeries {
 
             ResultSet rs = ps.getGeneratedKeys();
 
-            consulta.setIdConsulta(rs.getInt(1));
-
+            
             if (rs.next()) {
 
-                JOptionPane.showMessageDialog(null, "Consulta agregada con éxito");
+                JOptionPane.showMessageDialog(null, "Usuario Agregado");
             }
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error al agregar consulta " + ex);
+            JOptionPane.showMessageDialog(null, "Error al Agregar Usuario " );
         }
+                            
+}
+        public void consultarUsuario (String user, String pass){
+         
         
+        String sql = "SELECT idUsuario, usuario, password, tipoUsuario FROM usuarios WHERE usuario ='"+user+"'";
+        try {
+           PreparedStatement ps = con.prepareStatement(sql);
+           ResultSet rs= ps.executeQuery();
+          ps.setString(1,user);
+           
+           if (rs.next()){
+           String U =rs.getString("usuario");
+           String P = rs.getString("password");
+           String priv= rs.getString("tipoUsuario");
+           
+            if (user != U){}
+           
+           if (pass.equals(P)){
+               if (priv.equals("BASICO")){
+                   Cliente cliente = new Cliente();
+                   cliente.setLocationRelativeTo(null);
+                cliente.setVisible(true);
                 
-    
+                
+               }else if (priv.equals("ADMINISTRADOR")){
+                   Nutricionista nutri = new Nutricionista();
+                   nutri.setLocationRelativeTo(null);
+                   nutri.setVisible(true);
+                   
+               }  
+           }
+             
+           }
+       } catch (SQLException ex) {
+          JOptionPane.showMessageDialog(null, "Usuario o Contraseña Incorrecta");
+       }
 }
 }
