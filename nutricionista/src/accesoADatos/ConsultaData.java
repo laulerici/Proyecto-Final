@@ -149,7 +149,7 @@ public class ConsultaData {
 
     public void tendenciaPesos(int idPaciente) {
 
-<<<<<<< Updated upstream
+
         String sql = "SELECT fecha, peso FROM consulta WHERE idPaciente=1";
 
         try {
@@ -258,8 +258,7 @@ public class ConsultaData {
     
     
 */
-=======
-=======
+
 //          
 //            ResultSet rs = ps.executeQuery();
 //
@@ -315,7 +314,6 @@ public class ConsultaData {
 //    
     
 
->>>>>>> Stashed changes
 }
 
 

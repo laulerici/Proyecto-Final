@@ -242,10 +242,10 @@ public class Home extends javax.swing.JFrame {
                 Button_HomeMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Button_HomeMouseEntered(evt);
+                Button_HomeMouseEntere(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                Button_HomeMouseExited(evt);
+                Button_HomeMouseExite(evt);
             }
         });
         jPanel7.add(Button_Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
@@ -409,14 +409,12 @@ public class Home extends javax.swing.JFrame {
         Panel_Min.setBackground(Color.lightGray);
         Button_Min.setForeground(Color.white);
     }//GEN-LAST:event_Button_MinMouseEntered
-
-
     private void Button_CloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_CloseMouseExited
-
     }//GEN-LAST:event_Button_CloseMouseExited
 
+}
     private void Button_MinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_MinMouseExited
-     
+
     }//GEN-LAST:event_Button_MinMouseExited
 
     private void Button_HomeMouseEntered(java.awt.event.MouseEvent evt) {                                         
@@ -431,15 +429,15 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_MinMouseClicked
 
 
-    private void Button_HomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_HomeMouseExited
+    private void Button_HomeMouseExite(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_HomeMouseExite
         jPanel7.setBackground(new Color(204,204,255));
         Button_Home.setText("");
-    }//GEN-LAST:event_Button_HomeMouseExited
+    }//GEN-LAST:event_Button_HomeMouseExite
 
-    private void Button_HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_HomeMouseEntered
+    private void Button_HomeMouseEntere(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_HomeMouseEntere
         jPanel7.setBackground(Color.lightGray);
         Button_Home.setText("Agregar Pacientes");
-    }//GEN-LAST:event_Button_HomeMouseEntered
+    }//GEN-LAST:event_Button_HomeMouseEntere
 
     private void Button_HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_HomeMouseClicked
         VistaAgregarPaciente agregar = new VistaAgregarPaciente ();
