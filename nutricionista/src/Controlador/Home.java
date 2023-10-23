@@ -101,7 +101,7 @@ public class Home extends javax.swing.JFrame {
 
         Button_Proveedor.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         Button_Proveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Button_Proveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/proveedor-35.png"))); // NOI18N
+        Button_Proveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/documento-35.png"))); // NOI18N
         Button_Proveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Proveedor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
