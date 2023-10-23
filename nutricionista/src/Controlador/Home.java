@@ -412,13 +412,11 @@ public class Home extends javax.swing.JFrame {
 
 
     private void Button_CloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_CloseMouseExited
-        Panel_Close.setBackground(Color.white);
-        Button_Close.setForeground(Color.black);
+
     }//GEN-LAST:event_Button_CloseMouseExited
 
     private void Button_MinMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_MinMouseExited
-        Panel_Min.setBackground(Color.white);
-        Button_Min.setForeground(Color.black);
+     
     }//GEN-LAST:event_Button_MinMouseExited
 
     private void Button_HomeMouseEntered(java.awt.event.MouseEvent evt) {                                         
