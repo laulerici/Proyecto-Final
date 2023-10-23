@@ -473,7 +473,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_MinMouseExited
 
     private void Button_HomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_HomeMouseEntered
-        jPanel7.setBackground(Color.lightGray);
+        jPanel7.setBackground(Color.LIGHT_GRAY);
         Button_Home.setText("Inicio");
     }//GEN-LAST:event_Button_HomeMouseEntered
 
