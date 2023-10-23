@@ -79,7 +79,7 @@ public class Home extends javax.swing.JFrame {
 
         Button_Vender.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         Button_Vender.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Button_Vender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/vender-stock-35.png"))); // NOI18N
+        Button_Vender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/dietaketo.png"))); // NOI18N
         Button_Vender.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Vender.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
