@@ -57,9 +57,9 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
         jLabel6.setText("Telefono");
 
         jbagregar.setText("Agregar");
-        jbagregar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                agregarMouseCliked(evt);
+        jbagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbagregarActionPerformed(evt);
             }
         });
 
@@ -187,31 +187,36 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    private void jbagregarActionPerformed(java.awt.event.ActionEvent evt) {                                          
-    try {
-    Integer dni= Integer.parseInt(jtdni.getText());
-    Integer telefono= Integer.parseInt(jttelefono.getText());
+   
     
-    
-    
-    
-
-    private void jtlimpiarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    private void jtlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtlimpiarActionPerformed
     borrarCampos ();
     pacienteActual = null ;
        
-    }                                         
+    }//GEN-LAST:event_jtlimpiarActionPerformed
 
-    private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsalirActionPerformed
         dispose();
         
           
-    }                                       
+    }//GEN-LAST:event_jbsalirActionPerformed
 
-    private void agregarMouseCliked(java.awt.event.MouseEvent evt) {                                    
-        Integer dni= Integer.parseInt(jtdni.getText());
+    
+                                     
 
-    String apellido = jtapellido.getText();
+    private void jtestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtestadoActionPerformed
+        
+        
+    }//GEN-LAST:event_jtestadoActionPerformed
+
+    private void jbagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbagregarActionPerformed
+        // TODO add your handling code here:
+        try {
+    Integer dni= Integer.parseInt(jtdni.getText());
+    Integer telefono= Integer.parseInt(jttelefono.getText());
+    
+   
+   String apellido = jtapellido.getText();
     if (!validarLetra(jtapellido.getText() )){
     JOptionPane.showMessageDialog(this,"los datos no son correctos");
     return;
@@ -223,7 +228,6 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
         JOptionPane.showMessageDialog(this,"los datos no son correctos");
         return;
     }else {}
-    
     
     String domicilio = jtdomicilio.getText();
     
@@ -251,32 +255,12 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
     
     }catch (NumberFormatException nfe) {
         JOptionPane.showMessageDialog(this,"debe ingresar un Numero valido");
-        
+              
         
    }
     
     
-    }                                         
-
-    private void jtlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtlimpiarActionPerformed
-    borrarCampos ();
-    pacienteActual = null ;
-       
-    }//GEN-LAST:event_jtlimpiarActionPerformed
-
-    private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsalirActionPerformed
-        dispose();
-        
-          
-    }//GEN-LAST:event_jbsalirActionPerformed
-
-    }
-    }                                   
-
-    private void jtestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtestadoActionPerformed
-        
-        
-    }//GEN-LAST:event_jtestadoActionPerformed
+    }//GEN-LAST:event_jbagregarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

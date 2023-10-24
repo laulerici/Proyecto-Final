@@ -20,7 +20,7 @@ public class Nutricionista {
         DietaComidaData dietaComidaD = new DietaComidaData();
         ConsultaData consultaD = new ConsultaData();
 
-        Paciente paciente = new Paciente(4, "Claudio Facundo", "Suarez", "LaMadrid 13", 37457682, "123456567", true);
+        Paciente paciente = new Paciente(4, "Claudio Facundo", "Suarez", "LaMadrid 13", 37457682, 123456567, true);
         //  Comida comida = new Comida(2, "sushi", "roll de salmón ahumado con queso Philadelfia", 150, true);
         Dieta dieta = new Dieta("Dieta de la Luna", 2, LocalDate.of(2023, 9, 1), LocalDate.of(2023, 10, 1), 80, 70, true);
         // DietaComida dietacomida = new DietaComida(3, 3, true);
