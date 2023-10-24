@@ -57,9 +57,9 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
         jLabel6.setText("Telefono");
 
         jbagregar.setText("Agregar");
-        jbagregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbagregarActionPerformed(evt);
+        jbagregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarMouseCliked(evt);
             }
         });
 
@@ -186,7 +186,8 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbagregarActionPerformed
+
+    private void jbagregarActionPerformed(java.awt.event.ActionEvent evt) {                                          
     try {
     Integer dni= Integer.parseInt(jtdni.getText());
     Integer telefono= Integer.parseInt(jttelefono.getText());
@@ -194,6 +195,22 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
     
     
     
+
+    private void jtlimpiarActionPerformed(java.awt.event.ActionEvent evt) {                                          
+    borrarCampos ();
+    pacienteActual = null ;
+       
+    }                                         
+
+    private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        dispose();
+        
+          
+    }                                       
+
+    private void agregarMouseCliked(java.awt.event.MouseEvent evt) {                                    
+        Integer dni= Integer.parseInt(jtdni.getText());
+
     String apellido = jtapellido.getText();
     if (!validarLetra(jtapellido.getText() )){
     JOptionPane.showMessageDialog(this,"los datos no son correctos");
@@ -226,6 +243,7 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
     if (pacienteActual == null){
     pacienteActual = new Paciente (nombre, apellido, domicilio, dni, telefono, estado);
     paData.altaPaciente(pacienteActual);
+
     
     }else {JOptionPane.showMessageDialog(this,"imposible agregar");
     
@@ -238,7 +256,7 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
    }
     
     
-    }//GEN-LAST:event_jbagregarActionPerformed
+    }                                         
 
     private void jtlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtlimpiarActionPerformed
     borrarCampos ();
@@ -251,6 +269,9 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
         
           
     }//GEN-LAST:event_jbsalirActionPerformed
+
+    }
+    }                                   
 
     private void jtestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtestadoActionPerformed
         

@@ -33,8 +33,12 @@ public class Paciente {
         this.telef = telef;
         this.estado = estado;
     }
-// 
+
+// Borrar una vez desicidida la vista de agregar paciente
     
+    public Paciente(String nombre, String apellido, String domicilio, Integer dni, String telefono) {
+       
+    }
 
     public int getIdPaciente() {
         return idPaciente;
