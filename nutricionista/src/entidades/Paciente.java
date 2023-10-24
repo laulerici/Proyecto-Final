@@ -34,8 +34,9 @@ public class Paciente {
         this.estado = estado;
     }
 // Borrar una vez desicidida la vista de agregar paciente
+    
     public Paciente(String nombre, String apellido, String domicilio, Integer dni, String telefono) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 
     public int getIdPaciente() {
