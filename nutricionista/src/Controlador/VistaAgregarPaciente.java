@@ -55,9 +55,9 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
         jLabel6.setText("Telefono");
 
         jbagregar.setText("Agregar");
-        jbagregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbagregarActionPerformed(evt);
+        jbagregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                agregarMouseCliked(evt);
             }
         });
 
@@ -167,8 +167,20 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbagregarActionPerformed
-    Integer dni= Integer.parseInt(jtdni.getText());
+    private void jtlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtlimpiarActionPerformed
+    borrarCampos ();
+    pacienteActual = null ;
+       
+    }//GEN-LAST:event_jtlimpiarActionPerformed
+
+    private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsalirActionPerformed
+        dispose();
+        
+          
+    }//GEN-LAST:event_jbsalirActionPerformed
+
+    private void agregarMouseCliked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_agregarMouseCliked
+        Integer dni= Integer.parseInt(jtdni.getText());
     String apellido = jtapellido.getText();
     String nombre = jtnombre.getText();
     String domicilio = jtdomicilio.getText();
@@ -182,23 +194,8 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
     if (pacienteActual == null){
     pacienteActual = new Paciente (nombre, apellido, domicilio, dni, telefono);
     paData.altaPaciente(pacienteActual);
-    
-    
     }
-    
-    }//GEN-LAST:event_jbagregarActionPerformed
-
-    private void jtlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtlimpiarActionPerformed
-    borrarCampos ();
-    pacienteActual = null ;
-       
-    }//GEN-LAST:event_jtlimpiarActionPerformed
-
-    private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsalirActionPerformed
-        dispose();
-        
-          
-    }//GEN-LAST:event_jbsalirActionPerformed
+    }//GEN-LAST:event_agregarMouseCliked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
