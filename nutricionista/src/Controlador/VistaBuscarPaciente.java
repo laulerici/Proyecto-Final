@@ -27,7 +27,7 @@ private Paciente pacienteActual = null ;
         jtdni = new javax.swing.JTextField();
         jbbuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtable = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -56,7 +56,7 @@ private Paciente pacienteActual = null ;
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -67,7 +67,7 @@ private Paciente pacienteActual = null ;
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jtable);
 
         jButton1.setText("Modificar");
 
@@ -219,8 +219,8 @@ private Paciente pacienteActual = null ;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton jbbuscar;
+    private javax.swing.JTable jtable;
     private javax.swing.JTextField jtapellido;
     private javax.swing.JTextField jtdni;
     private javax.swing.JTextField jtdomicilio;
