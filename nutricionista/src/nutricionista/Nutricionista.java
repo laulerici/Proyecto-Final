@@ -20,11 +20,12 @@ public class Nutricionista {
         DietaComidaData dietaComidaD = new DietaComidaData();
         ConsultaData consultaD = new ConsultaData();
 
-        Paciente paciente = new Paciente(4, "Claudio Facundo", "Suarez", "LaMadrid 13", 37457682, "123456567", true);
+       // Paciente paciente = new Paciente(4, "Claudio Facundo", "Suarez", "LaMadrid 13", 37457682, "123456567", true);
         //  Comida comida = new Comida(2, "sushi", "roll de salmón ahumado con queso Philadelfia", 150, true);
-        Dieta dieta = new Dieta("Dieta de la Luna", 2, LocalDate.of(2023, 9, 1), LocalDate.of(2023, 10, 1), 80, 70, true);
+        //Dieta dieta = new Dieta("Dieta de la Luna", 2, LocalDate.of(2023, 9, 1), LocalDate.of(2023, 10, 1), 80, 70, true);
         // DietaComida dietacomida = new DietaComida(3, 3, true);
-        Consulta consulta = new Consulta(1, LocalDate.of(2023, 8, 23), 72, 165, 15, pacienteD.buscarPacienteXId(1)); //hacer metodo para buscar paciente por id
+      //  Consulta consulta = new Consulta(1, LocalDate.of(2023, 10, 24), 56, 168, 15, pacienteD.buscarPacienteXApellido("Lerici")); //hacer metodo para buscar paciente por id
+        //consultaD.agregarConsulta(consulta);
 
         //pacienteD.altaPaciente(paciente);
         //pacienteD.bajaPacienteAp("Diaz");
@@ -38,7 +39,7 @@ public class Nutricionista {
         //dietaComidaD.altaDietaComida(dietacomida);
         //consultaD.agregarConsutla(consulta);
         //System.out.println(pacienteD.buscarPacienteXId(1));
-        //System.out.println(pacienteD.buscarPacienteXApellido("Diaz"));
+       // System.out.println(pacienteD.buscarPacienteXApellido("Diaz"));
         /*
         for (Comida comida : comidaD.listarComidaXCal(500)) {
             
@@ -80,9 +81,15 @@ for (Comida comida : dietaComidaD.listarComidasPorDieta(2)) {
         // dietaComidaD.sumarCaloriasXDieta(4);
         // consultaD.calculoImc(1.68, 60);
         //consultaD.modificarConsulta(consulta);
+        
+    for(Paciente paciente: pacienteD.listarPacientes()){
+        
+        System.out.println("idPaciente "+ paciente.getIdPaciente());  
+        System.out.println("Apellido "+ paciente.getApellido());  
+        System.out.println("Nombre "+ paciente.getNombre());  
+              
     }
-
-    public void setLocationRelativeTo(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        
     }
 }
