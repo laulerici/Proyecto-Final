@@ -23,8 +23,8 @@ public class PacienteData {
     }  
     public void altaPaciente(Paciente paciente) {
 
-        String sql = "INSERT INTO paciente (nombre,apellido,domicilio,dni,telefono) "
-                + "VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO paciente (nombre,apellido,domicilio,dni,telefono,estado) "
+                + "VALUES (?,?,?,?,?,?)";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -33,7 +33,8 @@ public class PacienteData {
             ps.setString(2, paciente.getApellido());
             ps.setString(3, paciente.getDomicilio());
             ps.setInt(4, paciente.getDni());
-            ps.setString(5, paciente.getTelef());
+            ps.setInt(5, paciente.getTelef());
+            ps.setBoolean(6, true);
 
             ps.executeUpdate();
 
@@ -105,7 +106,7 @@ public class PacienteData {
             ps.setString(2, paciente.getApellido());
             ps.setString(3, paciente.getDomicilio());
             ps.setInt(4, paciente.getDni());
-            ps.setString(5, paciente.getTelef());
+            ps.setInt(5, paciente.getTelef());
             ps.setInt(6, paciente.getIdPaciente());
 
             int exito = ps.executeUpdate();
@@ -138,7 +139,7 @@ public class PacienteData {
                 paciente.setApellido(rs.getString("apellido"));
                 paciente.setDomicilio(rs.getString("domicilio"));
                 paciente.setDni(rs.getInt("dni"));
-                paciente.setTelef(rs.getString("telefono"));
+                paciente.setTelef(rs.getInt("telefono"));
                 paciente.setEstado(rs.getBoolean("estado"));
 
             } else {
@@ -169,7 +170,7 @@ public class PacienteData {
                 paciente.setNombre(rs.getString("nombre"));
                 paciente.setDomicilio(rs.getString("domicilio"));
                 paciente.setDni(rs.getInt("dni"));
-                paciente.setTelef(rs.getString("telefono"));
+                paciente.setTelef(rs.getInt("telefono"));
                 paciente.setEstado(rs.getBoolean("estado"));
 
             } else {
@@ -200,7 +201,7 @@ public class PacienteData {
                 paciente.setApellido(rs.getString("apellido"));
                 paciente.setDomicilio(rs.getString("domicilio"));
                 
-                paciente.setTelef(rs.getString("telefono"));
+                paciente.setTelef(rs.getInt("telefono"));
                 paciente.setEstado(rs.getBoolean("estado"));
 
             } else {

@@ -8,14 +8,14 @@ public class Paciente {
     private String apellido;
     private String domicilio;
     private int dni;
-    private String telef;   
+    private int telef;   
     private boolean estado;
 
 
     public Paciente() {
     }
 
-    public Paciente(String nombre, String apellido, String domicilio, int dni, String telef,boolean estado) {
+    public Paciente(String nombre, String apellido, String domicilio, int dni, int telef,boolean estado) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.domicilio = domicilio;
@@ -24,7 +24,7 @@ public class Paciente {
         this.estado = estado; 
     }
 
-    public Paciente(int idPaciente, String nombre, String apellido, String domicilio, int dni, String telef, boolean estado) {
+    public Paciente(int idPaciente, String nombre, String apellido, String domicilio, int dni, int telef, boolean estado) {
         this.idPaciente = idPaciente;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -33,6 +33,7 @@ public class Paciente {
         this.telef = telef;
         this.estado = estado;
     }
+
 // Borrar una vez desicidida la vista de agregar paciente
     
     public Paciente(String nombre, String apellido, String domicilio, Integer dni, String telefono) {
@@ -79,11 +80,11 @@ public class Paciente {
         this.dni = dni;
     }
 
-    public String getTelef() {
+    public int getTelef() {
         return telef;
     }
 
-    public void setTelef(String telef) {
+    public void setTelef(int telef) {
         this.telef = telef;
     }
 
