@@ -32,15 +32,7 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
 
         jComboBox1 = new javax.swing.JComboBox<>();
         jPopupMenu1 = new javax.swing.JPopupMenu();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDayChooser1 = new com.toedter.calendar.JDayChooser();
-        jDayChooser2 = new com.toedter.calendar.JDayChooser();
-        jDayChooser3 = new com.toedter.calendar.JDayChooser();
-        jLocaleChooser1 = new com.toedter.components.JLocaleChooser();
         jTFecha = new javax.swing.JTextField();
-        jDayChooser4 = new com.toedter.calendar.JDayChooser();
-        jDFecha = new com.toedter.calendar.JDayChooser();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -51,10 +43,10 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
         jBAgregar = new javax.swing.JButton();
         jBlimpiar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
-        jDateFecha = new com.toedter.calendar.JDateChooser();
         jTAltura = new javax.swing.JTextField();
         jBSalir = new javax.swing.JButton();
         jCPaciente = new javax.swing.JComboBox<>();
+        jDateFecha = new com.toedter.calendar.JDateChooser();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -136,12 +128,8 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(128, Short.MAX_VALUE)
+                .addContainerGap(106, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jDateFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -153,12 +141,15 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel3))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(195, 195, 195))
+                            .addComponent(jTPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jDateFecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jCPaciente, javax.swing.GroupLayout.Alignment.LEADING, 0, 129, Short.MAX_VALUE)))))
+                .addGap(217, 217, 217))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -183,11 +174,11 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel1)
-                    .addComponent(jDateFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
+                    .addComponent(jDateFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jTPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -207,7 +198,7 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
                     .addComponent(jBAgregar)
                     .addComponent(jBlimpiar)
                     .addComponent(jBSalir))
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         pack();
@@ -228,7 +219,13 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
             double peso = Double.valueOf(jTPeso.getText());
             double altura = Double.parseDouble(jTAltura.getText());
             double imc = consultaD.calculoImc(altura, peso);
-         
+
+            if (jTPeso.getText().isEmpty() || jTAltura.getText().isEmpty()) {
+
+                JOptionPane.showMessageDialog(this, "Complete todos los campos");
+                return;
+            }
+   
             Consulta consulta = new Consulta(fecha, peso, altura, imc, pacienteActual);
             consultaD.agregarConsulta(consulta);
             
@@ -280,22 +277,14 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBSalir;
     private javax.swing.JButton jBlimpiar;
     private javax.swing.JComboBox<Paciente> jCPaciente;
-    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JComboBox<String> jComboBox1;
-    private com.toedter.calendar.JDayChooser jDFecha;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateFecha;
-    private com.toedter.calendar.JDayChooser jDayChooser1;
-    private com.toedter.calendar.JDayChooser jDayChooser2;
-    private com.toedter.calendar.JDayChooser jDayChooser3;
-    private com.toedter.calendar.JDayChooser jDayChooser4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private com.toedter.components.JLocaleChooser jLocaleChooser1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JTextField jTAltura;
     private javax.swing.JTextField jTFecha;
@@ -316,7 +305,6 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Ingrese valores válidos " + e);
-
         }
        
     }
@@ -338,8 +326,19 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
         jCPaciente.setModel(mdlCombo);
 
     }
-    
 
+    public static boolean validarNumeros(String datos) {
+
+        return datos.matches("[0-9]*");
+    }
+
+    public static boolean validarLetras(String datos) {
+
+        return datos.matches("[a-zA-Z]*");
+    }
+
+    public static boolean validarLetra(String datos) {
+
+        return datos.matches("[a-zA-Z]*");
+    }
 }
-
-

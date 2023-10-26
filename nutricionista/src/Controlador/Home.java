@@ -22,7 +22,7 @@ public class Home extends javax.swing.JFrame {
         BarraLateral = new javax.swing.JPanel();
         Button_Mi_Info = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        Button_Vender = new javax.swing.JLabel();
+        Button_Comida = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         Button_Proveedor = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
@@ -77,22 +77,22 @@ public class Home extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Button_Vender.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        Button_Vender.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Button_Vender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/dietaketo.png"))); // NOI18N
-        Button_Vender.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Button_Vender.addMouseListener(new java.awt.event.MouseAdapter() {
+        Button_Comida.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        Button_Comida.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Button_Comida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/dietaketo.png"))); // NOI18N
+        Button_Comida.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Button_Comida.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Button_VenderMouseClicked(evt);
+                Button_ComidaMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Button_VenderMouseEntered(evt);
+                Button_ComidaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                Button_VenderMouseExited(evt);
+                Button_ComidaMouseExited(evt);
             }
         });
-        jPanel1.add(Button_Vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
+        jPanel1.add(Button_Comida, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
 
         BarraLateral.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 210, 40));
 
@@ -551,19 +551,19 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_ProveedorMouseClicked
 
-    private void Button_VenderMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_VenderMouseExited
+    private void Button_ComidaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ComidaMouseExited
         jPanel1.setBackground(new Color(204,204,255));
-        Button_Vender.setText("");
-    }//GEN-LAST:event_Button_VenderMouseExited
+        Button_Comida.setText("");
+    }//GEN-LAST:event_Button_ComidaMouseExited
 
-    private void Button_VenderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_VenderMouseEntered
+    private void Button_ComidaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ComidaMouseEntered
         jPanel1.setBackground(Color.lightGray);
-        Button_Vender.setText("Realizar una venta");
-    }//GEN-LAST:event_Button_VenderMouseEntered
+        Button_Comida.setText("Detalle de Comidas");
+    }//GEN-LAST:event_Button_ComidaMouseEntered
 
-    private void Button_VenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_VenderMouseClicked
+    private void Button_ComidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ComidaMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_Button_VenderMouseClicked
+    }//GEN-LAST:event_Button_ComidaMouseClicked
 
    
     public static void main(String args[]) {
@@ -605,12 +605,16 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel Button_Ajustes;
     private javax.swing.JLabel Button_Busqueda;
     private javax.swing.JLabel Button_Close;
+<<<<<<< HEAD
+=======
+    private javax.swing.JLabel Button_Comida;
+    private javax.swing.JLabel Button_Documentos;
+>>>>>>> f291828fd55268545f082807321a2d0c7ce6077a
     private javax.swing.JLabel Button_Exit;
     private javax.swing.JLabel Button_Home;
     private javax.swing.JLabel Button_Mi_Info;
     private javax.swing.JLabel Button_Min;
     private javax.swing.JLabel Button_Proveedor;
-    private javax.swing.JLabel Button_Vender;
     private javax.swing.JLabel Button_info;
     private javax.swing.JPanel PanelContenedor;
     private javax.swing.JPanel PanelPrincipal;
@@ -627,3 +631,4 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
 }
+

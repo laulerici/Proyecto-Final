@@ -28,6 +28,10 @@ public class Comida {
         this.estado = estado;
     }
 
+    public Comida(String text, String text0, int parseInt) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public int getIdComida() {
         return idComida;
     }

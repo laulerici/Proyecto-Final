@@ -1,4 +1,3 @@
-
 package accesoADatos;
 
 import entidades.Comida;
@@ -13,7 +12,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
 
-
 public class ComidaData {
 
     private Connection con = null;
@@ -23,7 +21,7 @@ public class ComidaData {
         con = Conexion.conectar("nutricionista");
     }
 
-      public void altaComida(Comida comida) {
+    public void altaComida(Comida comida) {
 
         String sql = "INSERT INTO comida (nombre, detalle, cantCalorias,estado) VALUES (?,?,?,?)";
 

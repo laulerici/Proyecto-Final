@@ -23,23 +23,7 @@
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
     </Container>
-    <Component class="com.toedter.calendar.JCalendar" name="jCalendar1">
-    </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="jDateChooser1">
-    </Component>
-    <Component class="com.toedter.calendar.JDayChooser" name="jDayChooser1">
-    </Component>
-    <Component class="com.toedter.calendar.JDayChooser" name="jDayChooser2">
-    </Component>
-    <Component class="com.toedter.calendar.JDayChooser" name="jDayChooser3">
-    </Component>
-    <Component class="com.toedter.components.JLocaleChooser" name="jLocaleChooser1">
-    </Component>
     <Component class="javax.swing.JTextField" name="jTFecha">
-    </Component>
-    <Component class="com.toedter.calendar.JDayChooser" name="jDayChooser4">
-    </Component>
-    <Component class="com.toedter.calendar.JDayChooser" name="jDFecha">
     </Component>
   </NonVisualComponents>
   <SyntheticProperties>
@@ -61,13 +45,8 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="128" max="32767" attributes="0"/>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jLabel1" min="-2" pref="52" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jDateFecha" min="-2" pref="129" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -83,15 +62,19 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="66" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jCPaciente" min="-2" pref="129" max="-2" attributes="0"/>
                           <Component id="jTPeso" min="-2" pref="133" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jDateFecha" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jCPaciente" alignment="0" pref="129" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
@@ -125,12 +108,12 @@
                   <Component id="jLabel3" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jCPaciente" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <Component id="jDateFecha" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="jDateFecha" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jTPeso" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -156,7 +139,7 @@
                   <Component id="jBlimpiar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBSalir" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="116" max="32767" attributes="0"/>
+              <EmptySpace pref="120" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -237,8 +220,6 @@
         <Property name="text" type="java.lang.String" value="Agregar Consulta"/>
       </Properties>
     </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="jDateFecha">
-    </Component>
     <Component class="javax.swing.JTextField" name="jTAltura">
       <Events>
         <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTAlturaKeyReleased"/>
@@ -265,6 +246,8 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Paciente&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="jDateFecha">
     </Component>
   </SubComponents>
 </Form>
