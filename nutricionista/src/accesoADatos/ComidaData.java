@@ -94,7 +94,30 @@ public class ComidaData {
 
     }
 
-    public void buscarComidaxDieta(Comida comida) {
+    public Comida buscarComidaPorNombre(String nombre) {
+        String sql = "SELECT idComida, nombre, detalle, cantCalorias FROM comida WHERE estado=?";
+        Comida comida = null;
+        
+        try{
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()){
+                comida = new Comida();
+                
+                comida.setIdComida(rs.getInt("idComida"));
+                comida.setNombre(rs.getString("nombre"));
+                comida.setDetalle(rs.getString("detalle"));
+                comida.setCantCalorias(rs.getInt("cantCalorias"));
+                comida.setEstado(rs.getBoolean("estado"));
+            }else{
+                JOptionPane.showMessageDialog(null,"no existe comida");
+            }
+            ps.close();
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null, "Error");
+        }
+        return comida;
     }
 
     public ArrayList<Comida> listarComidaXCal(int cantCalorias) {
