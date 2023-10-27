@@ -99,6 +99,11 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("Agregar Consulta");
 
+        jTAltura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTAlturaActionPerformed(evt);
+            }
+        });
         jTAltura.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTAlturaKeyReleased(evt);
@@ -270,6 +275,10 @@ public class AgregarConsultasView extends javax.swing.JInternalFrame {
         double imc = consultaD.calculoImc(altura, peso);
         jTImc.setText(imc + "");
     }//GEN-LAST:event_jTAlturaKeyReleased
+
+    private void jTAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTAlturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTAlturaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

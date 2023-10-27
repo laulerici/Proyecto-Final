@@ -203,7 +203,7 @@ public class PacienteData {
                 paciente.setApellido(rs.getString("apellido"));
                 paciente.setDomicilio(rs.getString("domicilio"));
 
-                paciente.setTelef(rs.getString("telefono"));
+                paciente.setTelef(rs.getInt("telefono"));
 
                 
                 paciente.setTelef(rs.getInt("telefono"));
@@ -238,7 +238,7 @@ public class PacienteData {
                 paciente.setNombre(rs.getString("nombre"));
                 paciente.setApellido(rs.getString("apellido"));
                 paciente.setDomicilio(rs.getString("domicilio"));
-                paciente.setTelef(rs.getString("telefono"));
+                paciente.setTelef(rs.getInt("telefono"));
 
                 listaPacientes.add(paciente);
             }

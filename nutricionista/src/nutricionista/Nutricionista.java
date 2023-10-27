@@ -80,9 +80,17 @@ for (Comida comida : dietaComidaD.listarComidasPorDieta(2)) {
         // dietaComidaD.sumarCaloriasXDieta(4);
         // consultaD.calculoImc(1.68, 60);
         //consultaD.modificarConsulta(consulta);
-    }
+    
 
-    public void setLocationRelativeTo(Object object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+   for (Comida comida : comidaD.listarComida()) {
+            
+            System.out.println("nombre: "+comida.getNombre());
+            System.out.println("calorias: "+comida.getCantCalorias());
+            System.out.println("detalle: "+comida.getDetalle()); 
+    
+    
+}
+
+}
 }
