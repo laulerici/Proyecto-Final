@@ -70,6 +70,11 @@ private Paciente pacienteActual = null ;
         jScrollPane1.setViewportView(jtable);
 
         jButton1.setText("Modificar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Eliminar");
 
@@ -185,26 +190,29 @@ private Paciente pacienteActual = null ;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbbuscarActionPerformed
-        try { 
-        Integer dni= Integer.parseInt(jtdni.getText());
-         String apellido = jtapellido.getText();
-         pacienteActual=paData.buscarPacienteXdni(dni);
-         pacienteActual=paData.buscarPacienteXApellido(apellido);
-         
-         
-     if (pacienteActual != null){
-        
-    pacienteActual.setNombre(pacienteActual.getNombre());
-    pacienteActual.setApellido(apellido);
-    pacienteActual.setDomicilio(pacienteActual.getDomicilio());
-    pacienteActual.setDni(dni);
-    pacienteActual.setTelef(pacienteActual.getTelef());
-     }
-        }catch (NumberFormatException ex) {
-        JOptionPane.showMessageDialog(this,"debe ingresar un numero");
+        try {
+            Integer dni = Integer.parseInt(jtdni.getText());
+            String apellido = jtapellido.getText();
+            pacienteActual = paData.buscarPacienteXdni(dni);
+            pacienteActual = paData.buscarPacienteXApellido(apellido);
+
+            if (pacienteActual != null) {
+
+                pacienteActual.setNombre(pacienteActual.getNombre());
+                pacienteActual.setApellido(apellido);
+                pacienteActual.setDomicilio(pacienteActual.getDomicilio());
+                pacienteActual.setDni(dni);
+                pacienteActual.setTelef(pacienteActual.getTelef());
+            }
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "debe ingresar un numero");
         }
 
     }//GEN-LAST:event_jbbuscarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
