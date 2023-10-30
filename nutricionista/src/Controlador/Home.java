@@ -24,13 +24,13 @@ public class Home extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         Button_Comida = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        Button_Proveedor = new javax.swing.JLabel();
+        BArmarDieta = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        Button_Documentos = new javax.swing.JLabel();
+        BConPaciente = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        Button_Ajustes = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
         Button_Busqueda = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        Button_Ajustes = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         Button_info = new javax.swing.JLabel();
         Panel_Exit = new javax.swing.JPanel();
@@ -100,71 +100,49 @@ public class Home extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(204, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Button_Proveedor.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        Button_Proveedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Button_Proveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/documento-35.png"))); // NOI18N
-        Button_Proveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Button_Proveedor.addMouseListener(new java.awt.event.MouseAdapter() {
+        BArmarDieta.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        BArmarDieta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BArmarDieta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/comida-dietetica (1).png"))); // NOI18N
+        BArmarDieta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BArmarDieta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Button_ProveedorMouseClicked(evt);
+                BArmarDietaMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Button_ProveedorMouseEntered(evt);
+                BArmarDietaMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                Button_ProveedorMouseExited(evt);
+                BArmarDietaMouseExited(evt);
             }
         });
-        jPanel2.add(Button_Proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
+        jPanel2.add(BArmarDieta, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
 
         BarraLateral.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 210, 40));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Button_Documentos.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        Button_Documentos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Button_Documentos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/documento-35.png"))); // NOI18N
-        Button_Documentos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Button_Documentos.addMouseListener(new java.awt.event.MouseAdapter() {
+        BConPaciente.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        BConPaciente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BConPaciente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/doctor-en-medicina.png"))); // NOI18N
+        BConPaciente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        BConPaciente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Button_DocumentosMouseClicked(evt);
+                BConPacienteMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Button_DocumentosMouseEntered(evt);
+                BConPacienteMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                Button_DocumentosMouseExited(evt);
+                BConPacienteMouseExited(evt);
             }
         });
-        jPanel3.add(Button_Documentos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
+        jPanel3.add(BConPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
 
         BarraLateral.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 210, 40));
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Button_Ajustes.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        Button_Ajustes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Button_Ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ajustes-35.png"))); // NOI18N
-        Button_Ajustes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Button_Ajustes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Button_AjustesMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Button_AjustesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Button_AjustesMouseExited(evt);
-            }
-        });
-        jPanel4.add(Button_Ajustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
-
-        BarraLateral.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 210, 40));
-
-        jPanel5.setBackground(new java.awt.Color(204, 204, 255));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Button_Busqueda.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
         Button_Busqueda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -182,7 +160,29 @@ public class Home extends javax.swing.JFrame {
                 Button_BusquedaMouseExited(evt);
             }
         });
-        jPanel5.add(Button_Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
+        jPanel4.add(Button_Busqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
+
+        BarraLateral.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 210, 40));
+
+        jPanel5.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Button_Ajustes.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        Button_Ajustes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Button_Ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ajustes-35.png"))); // NOI18N
+        Button_Ajustes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Button_Ajustes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Button_AjustesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Button_AjustesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Button_AjustesMouseExited(evt);
+            }
+        });
+        jPanel5.add(Button_Ajustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 210, 40));
 
         BarraLateral.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 210, 40));
 
@@ -457,11 +457,14 @@ public class Home extends javax.swing.JFrame {
 
     private void Button_BusquedaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_BusquedaMouseEntered
         jPanel5.setBackground(Color.lightGray);
-        Button_Busqueda.setText("Busqueda");
+        Button_Busqueda.setText("Buscar Consultas");
     }//GEN-LAST:event_Button_BusquedaMouseEntered
 
     private void Button_BusquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_BusquedaMouseClicked
-        // TODO add your handling code here:
+        VistaBuscarConsultas buscarConsulta = new  VistaBuscarConsultas();
+        buscarConsulta.setVisible(true);
+        escritorio.add(buscarConsulta);
+        escritorio.moveToFront(buscarConsulta);
     }//GEN-LAST:event_Button_BusquedaMouseClicked
 
     private void Button_AjustesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_AjustesMouseExited
@@ -478,33 +481,39 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_AjustesMouseClicked
 
-    private void Button_DocumentosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_DocumentosMouseExited
+    private void BConPacienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BConPacienteMouseExited
         jPanel3.setBackground(new Color(204,204,255));
-        Button_Documentos.setText("");
-    }//GEN-LAST:event_Button_DocumentosMouseExited
+        BConPaciente.setText("");
+    }//GEN-LAST:event_BConPacienteMouseExited
 
-    private void Button_DocumentosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_DocumentosMouseEntered
+    private void BConPacienteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BConPacienteMouseEntered
         jPanel3.setBackground(Color.lightGray);
-        Button_Documentos.setText("Documentación");
-    }//GEN-LAST:event_Button_DocumentosMouseEntered
+        BConPaciente.setText("Agregar consulta");
+    }//GEN-LAST:event_BConPacienteMouseEntered
 
-    private void Button_DocumentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_DocumentosMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_DocumentosMouseClicked
+    private void BConPacienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BConPacienteMouseClicked
+        AgregarConsultasView consultaView = new AgregarConsultasView();
+        consultaView.setVisible(true);
+        escritorio.add(consultaView);
+        escritorio.moveToFront(consultaView);
+    }//GEN-LAST:event_BConPacienteMouseClicked
 
-    private void Button_ProveedorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ProveedorMouseExited
+    private void BArmarDietaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BArmarDietaMouseExited
         jPanel2.setBackground(new Color(204,204,255));
-        Button_Proveedor.setText("");
-    }//GEN-LAST:event_Button_ProveedorMouseExited
+        BArmarDieta.setText("");
+    }//GEN-LAST:event_BArmarDietaMouseExited
 
-    private void Button_ProveedorMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ProveedorMouseEntered
+    private void BArmarDietaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BArmarDietaMouseEntered
         jPanel2.setBackground(Color.lightGray);
-        Button_Proveedor.setText("Proveedores");
-    }//GEN-LAST:event_Button_ProveedorMouseEntered
+        BArmarDieta.setText("Armar Dieta");
+    }//GEN-LAST:event_BArmarDietaMouseEntered
 
-    private void Button_ProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ProveedorMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_ProveedorMouseClicked
+    private void BArmarDietaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BArmarDietaMouseClicked
+        ArmarDieta armarConsulta= new ArmarDieta();
+        ArmarDieta.(true);
+        escritorio.add(consultaView);
+        escritorio.moveToFront(consultaView);
+    }//GEN-LAST:event_BArmarDietaMouseClicked
 
     private void Button_ComidaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ComidaMouseExited
         jPanel1.setBackground(new Color(204,204,255));
@@ -577,17 +586,17 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BArmarDieta;
+    private javax.swing.JLabel BConPaciente;
     private javax.swing.JPanel BarraLateral;
     private javax.swing.JLabel Button_Ajustes;
     private javax.swing.JLabel Button_Busqueda;
     private javax.swing.JLabel Button_Close;
     private javax.swing.JLabel Button_Comida;
-    private javax.swing.JLabel Button_Documentos;
     private javax.swing.JLabel Button_Exit;
     private javax.swing.JLabel Button_Home;
     private javax.swing.JLabel Button_Mi_Info;
     private javax.swing.JLabel Button_Min;
-    private javax.swing.JLabel Button_Proveedor;
     private javax.swing.JLabel Button_info;
     private javax.swing.JPanel PanelContenedor;
     private javax.swing.JPanel PanelPrincipal;
@@ -604,3 +613,4 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
 }
+

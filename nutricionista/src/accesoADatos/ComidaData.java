@@ -179,6 +179,34 @@ public class ComidaData {
         return listaComida;
     }
 
+        public ArrayList<Comida> listarComida() {
+
+        String sql = "SELECT * FROM comida WHERE estado=1";
+        ArrayList<Comida> listaComidas = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setBoolean(1, true);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Comida comida = new Comida();
+
+                comida.setNombre(rs.getString("nombre"));
+                comida.setDetalle(rs.getString("detalle"));
+                comida.setCantCalorias(rs.getInt("cantCalorias"));
+
+                listaComidas.add(comida);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error" + ex);
+        }
+        return listaComidas;
+    }
+    
     public ArrayList<Comida> listarComidasPorDieta(int idDieta) { // método con error VER!!!
 
         String sql = "SELECT comida.nombre, comida.detalle, comida.cantCalorias"

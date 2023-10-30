@@ -24,7 +24,7 @@ public class ConsultaData {
 
     }
 
-    public void agregarConsutla(Consulta consulta) {
+    public void agregarConsulta(Consulta consulta) {
 
         String sql = "INSERT INTO consulta (fecha, peso, altura, imc, idPaciente) VALUES (?,?,?,?,?)";
 
@@ -139,181 +139,13 @@ public class ConsultaData {
         return listaComida;
     }
 
-    public void calculoImc(double altura, double peso) {
+    public double calculoImc(double altura, double peso) {
 
         double imc = peso / (altura * altura);
 
-        System.out.println("El índice de masa corporal es " + imc);
+       return imc;
 
-    }
-
-    public void tendenciaPesos(int idPaciente) {
-
-
-        String sql = "SELECT fecha, peso FROM consulta WHERE idPaciente=1";
-
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-
-            ps.setInt(1, idPaciente);
-            ResultSet rs = ps.executeQuery();
-            
-            XYSeries series = new XYSeries();
-            
-            while (rs.next()) {
-                Date x = rs.getDate("fecha");
-                double y = rs.getDouble("peso");
-
-                //series.add(x, y);
-            }
-
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error" + ex);
-        }
-
-    }
-    
-    /*
-    public ArrayList<Consulta> listarPesos(int dni) {
-=======
-
-       /* public ArrayList<Consulta> listarPesos(int dni) {
->>>>>>> Stashed changes
-
-        String sql = "SELECT fecha,peso FROM consulta WHERE idPaciente=?";
-
-        ArrayList<Consulta> listaPesos = new ArrayList<>();
-
-    private Usuario usuario;
-            
-     public ArrayList<usuario> listaUsuarios() {
-
-        String sql = "SELECT usuario, password, tipoUsuario FROM usuarios";
-
-        ArrayList<Consulta> listaUsuario = new ArrayList<>();
-
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-
-
-            ps.setInt(1, idPaciente);
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                Consulta consulta = new Consulta();
-<<<<<<< Updated upstream
-
-          
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                Usuario Consulta consulta = new Consulta();
-
-
-                consulta.setFecha(rs.getDate("fecha").toLocalDate());
-                consulta.setPeso(rs.getDouble("peso"));
-                listaPesos.add(consulta);
-
-            }
-}
-     ps.close();
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error " + ex);
-        }
-        return listaPesos;
-
-    }
-*/
-    /*
-
-    public ArrayList<Comida> listarComidaXCal(int cantCalorias) {
-
-        String sql = "SELECT * FROM comida WHERE cantCalorias<?";
-        ArrayList<Comida> listaComida = new ArrayList<>();
-
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-
-            ps.setInt(1, cantCalorias);
-            ResultSet rs = ps.executeQuery();
-
-            while (rs.next()) {
-                Comida comida = new Comida();
-
-                comida.setIdComida(rs.getInt("idComida"));
-                comida.setNombre(rs.getString("nombre"));
-                comida.setDetalle(rs.getString("detalle"));
-                comida.setCantCalorias(rs.getInt("cantCalorias"));
-                comida.setEstado(rs.getBoolean("estado"));
-
-                listaComida.add(comida);
-            }
-            ps.close();
-
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error" + ex);
-        }
-        return listaComida;
-    }
-    
-    
-*/
-
-
-//          
-//            ResultSet rs = ps.executeQuery();
-//
-//            while (rs.next()) {
-//                Usuario Consulta consulta = new Consulta();
-//>>>>>>> Stashed changes
-//
-//                consulta.setFecha(rs.getDate("fecha").toLocalDate());
-//                consulta.setPeso(rs.getDouble("peso"));
-//                listaPesos.add(consulta);
-//<<<<<<< Updated upstream
-//            }*/
-//
-//            }
-//
-//            ps.close();
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Error " + ex);
-//        }
-//        return listaPesos;
-//
-//    }
-//
-//    public ArrayList<Comida> listarComidaXCal(int cantCalorias) {
-//
-//        String sql = "SELECT * FROM comida WHERE cantCalorias<?";
-//        ArrayList<Comida> listaComida = new ArrayList<>();
-//
-//        try {
-//            PreparedStatement ps = con.prepareStatement(sql);
-//
-//            ps.setInt(1, cantCalorias);
-//            ResultSet rs = ps.executeQuery();
-//
-//            while (rs.next()) {
-//                Comida comida = new Comida();
-//
-//                comida.setIdComida(rs.getInt("idComida"));
-//                comida.setNombre(rs.getString("nombre"));
-//                comida.setDetalle(rs.getString("detalle"));
-//                comida.setCantCalorias(rs.getInt("cantCalorias"));
-//                comida.setEstado(rs.getBoolean("estado"));
-//
-//                listaComida.add(comida);
-//            }
-//            ps.close();
-//
-//        } catch (SQLException ex) {
-//            JOptionPane.showMessageDialog(null, "Error" + ex);
-//        }
-//        return listaComida;
-//    }
-//    
-    
+    }  
 
 }
 

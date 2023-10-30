@@ -80,11 +80,25 @@ for (Comida comida : dietaComidaD.listarComidasPorDieta(2)) {
         // dietaComidaD.sumarCaloriasXDieta(4);
         // consultaD.calculoImc(1.68, 60);
         //consultaD.modificarConsulta(consulta);
+<<<<<<< HEAD
+    
+=======
         
         
         //System.out.println(comidaD.buscarComidaPorNombre("sushi"));
         
     }
+>>>>>>> 4be442b4a103b4d9739c392d33b58b74fa619f5f
 
-   
+    
+   for (Comida comida : comidaD.listarComida()) {
+            
+            System.out.println("nombre: "+comida.getNombre());
+            System.out.println("calorias: "+comida.getCantCalorias());
+            System.out.println("detalle: "+comida.getDetalle()); 
+    
+    
+}
+
+}
 }

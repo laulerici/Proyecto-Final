@@ -3,7 +3,7 @@ package entidades;
 
 
 public class Paciente {
-    private int idPaciente;
+    private int idPaciente;|
     private String nombre;
     private String apellido;
     private String domicilio;
@@ -100,7 +100,7 @@ public class Paciente {
 
     @Override
     public String toString() {
-        return "Paciente{" + "idPaciente=" + idPaciente + ", nombre=" + nombre + ", apellido=" + apellido + ", domicilio=" + domicilio + ", dni=" + dni + ", telef=" + telef + '}';
+        return apellido;
     }
    
     

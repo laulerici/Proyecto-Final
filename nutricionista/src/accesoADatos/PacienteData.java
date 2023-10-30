@@ -6,9 +6,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import org.mariadb.jdbc.Statement;
 
 
@@ -165,7 +167,7 @@ public class PacienteData {
             if (rs.next()) {
 
                 paciente = new Paciente();
-                paciente.setApellido(apellido);
+                paciente.setApellido("apellido");
                 paciente.setIdPaciente(rs.getInt("idPaciente"));
                 paciente.setNombre(rs.getString("nombre"));
                 paciente.setDomicilio(rs.getString("domicilio"));
@@ -200,6 +202,9 @@ public class PacienteData {
                 paciente.setNombre(rs.getString("nombre"));
                 paciente.setApellido(rs.getString("apellido"));
                 paciente.setDomicilio(rs.getString("domicilio"));
+
+                paciente.setTelef(rs.getInt("telefono"));
+
                 
                 paciente.setTelef(rs.getInt("telefono"));
                 paciente.setEstado(rs.getBoolean("estado"));
@@ -212,5 +217,36 @@ public class PacienteData {
             JOptionPane.showMessageDialog(null, "Error " + ex);
         }
         return paciente;
+    }
+
+    public ArrayList<Paciente> listarPacientes() {
+
+        ArrayList listaPacientes = new ArrayList<>();
+
+        String sql = "SELECT * FROM paciente";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                Paciente paciente = new Paciente();
+
+                paciente = new Paciente();
+                paciente.setIdPaciente(rs.getInt("idPaciente"));
+                paciente.setNombre(rs.getString("nombre"));
+                paciente.setApellido(rs.getString("apellido"));
+                paciente.setDomicilio(rs.getString("domicilio"));
+                paciente.setTelef(rs.getInt("telefono"));
+
+                listaPacientes.add(paciente);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error " + ex);
+        }
+        return listaPacientes;
     }
 }
