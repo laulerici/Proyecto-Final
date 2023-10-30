@@ -279,8 +279,6 @@ public class VistaComida extends javax.swing.JInternalFrame {
         
         comData.modificarComida(comida);
         
-      
-
     }//GEN-LAST:event_jbModificarMouseClicked
 
     private void jbAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jbAgregarMouseClicked
