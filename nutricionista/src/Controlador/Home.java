@@ -509,7 +509,7 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_BArmarDietaMouseEntered
 
     private void BArmarDietaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BArmarDietaMouseClicked
-        ArmarDieta armarConsulta= new ArmarDieta();
+        ArmarDieta armarDieta = new ArmarDieta();
         ArmarDieta.(true);
         escritorio.add(consultaView);
         escritorio.moveToFront(consultaView);

@@ -38,3 +38,11 @@ nutricionista/src/Controlador/Login1.form
 !/nutricionista/src/Controlador/BuscarConsultas.form
 !/nutricionista/src/Controlador/AgregarConsultasView.form
 !/nutricionista/src/Controlador/AgregarConsultasView.java
+!/nutricionista/src/Controlador/ArmarDieta.java
+!/nutricionista/src/Controlador/ArmarDieta.form
+!/nutricionista/src/Controlador/DietaPaciente.form
+!/nutricionista/src/Controlador/DietaPaciente.java
+!/nutricionista/src/Controlador/VistaBuscarConsultas.java
+!/nutricionista/src/Controlador/VistaBuscarConsultas.form
+!/nutricionista/src/Controlador/VistaComida.form
+!/nutricionista/src/Controlador/VistaComida.java
