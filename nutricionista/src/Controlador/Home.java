@@ -510,9 +510,9 @@ public class Home extends javax.swing.JFrame {
 
     private void BArmarDietaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BArmarDietaMouseClicked
         ArmarDieta armarDieta = new ArmarDieta();
-        ArmarDieta.(true);
-        escritorio.add(consultaView);
-        escritorio.moveToFront(consultaView);
+        armarDieta.setVisible(true);
+        escritorio.add(armarDieta);
+        escritorio.moveToFront(armarDieta);
     }//GEN-LAST:event_BArmarDietaMouseClicked
 
     private void Button_ComidaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_ComidaMouseExited
