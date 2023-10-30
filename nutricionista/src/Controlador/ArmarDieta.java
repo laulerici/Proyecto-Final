@@ -221,7 +221,7 @@ public class ArmarDieta extends javax.swing.JInternalFrame {
     }
 
     public void cargarComboBoxDieta() {
-        DefaultComboBoxModel<Dieta> mdlComboD = new DefaultComboBoxModel(dietaD.listariDietas().toArray());
+        DefaultComboBoxModel<Dieta> mdlComboD = new DefaultComboBoxModel(dietaD.listarDietas().toArray());
         jCDieta.setModel(mdlComboD);
     }
     

@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import org.mariadb.jdbc.Statement;
 
@@ -94,6 +95,35 @@ public DietaData(){
         
         
     }
+     public ArrayList<Dieta> listarDietas() {
 
+        String sql = "SELECT * FROM dieta";
+        ArrayList listaDietas = new ArrayList<>();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+
+                Dieta dieta = new Dieta();
+                dieta.setIdDieta(rs.getInt("idDieta"));
+                dieta.setIdPaciente(rs.getInt("idPaciente"));
+                dieta.setNombre(rs.getString("nombre"));
+                dieta.setFechaIni(rs.getDate("fechaIni").toLocalDate());
+                dieta.setFechaIni(rs.getDate("fechaFin").toLocalDate());
+                dieta.setPesoInicial(rs.getDouble("pesoInicial"));
+                dieta.setPesoFinal(rs.getDouble("pesoFinal"));
+                dieta.setEstado(rs.getBoolean("estado"));
+
+                listaDietas.add(dieta);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error " + ex);
+        }
+        return listaDietas;
+    }
 
 }

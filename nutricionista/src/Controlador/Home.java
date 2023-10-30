@@ -182,7 +182,7 @@ public class Home extends javax.swing.JFrame {
                 Button_AjustesMouseExited(evt);
             }
         });
-        jPanel5.add(Button_Ajustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 210, 40));
+        jPanel5.add(Button_Ajustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
 
         BarraLateral.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 210, 40));
 
