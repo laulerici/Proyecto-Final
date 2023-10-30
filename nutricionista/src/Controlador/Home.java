@@ -65,10 +65,11 @@ public class Home extends javax.swing.JFrame {
         BarraLateral.setBackground(new java.awt.Color(204, 204, 255));
         BarraLateral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Button_Mi_Info.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        Button_Mi_Info.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
+        Button_Mi_Info.setForeground(new java.awt.Color(0, 0, 0));
         Button_Mi_Info.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Button_Mi_Info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/nutricionista.png"))); // NOI18N
-        Button_Mi_Info.setText("Ver mi Información");
+        Button_Mi_Info.setText("Agostina Nutricionista MP3306");
         Button_Mi_Info.setToolTipText("");
         Button_Mi_Info.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Button_Mi_Info.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -259,7 +260,7 @@ public class Home extends javax.swing.JFrame {
         PanelContenedor.setLayout(PanelContenedorLayout);
         PanelContenedorLayout.setHorizontalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 588, Short.MAX_VALUE)
+            .addGap(0, 778, Short.MAX_VALUE)
         );
         PanelContenedorLayout.setVerticalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,7 +370,8 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 600));
+        getContentPane().add(PanelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 650));
+        PanelPrincipal.getAccessibleContext().setAccessibleName("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

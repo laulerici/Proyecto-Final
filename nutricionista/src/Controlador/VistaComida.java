@@ -62,7 +62,6 @@ public class VistaComida extends javax.swing.JInternalFrame {
         jtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtNombre.setBorder(null);
 
-        jtDetalle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtDetalle.setBorder(null);
         jtDetalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
