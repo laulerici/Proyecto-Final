@@ -23,7 +23,7 @@ public class Nutricionista {
         Paciente paciente = new Paciente(4, "Claudio Facundo", "Suarez", "LaMadrid 13", 37457682, 123456567, true);
         Comida comida = new Comida(2, "sushi", "roll de salmón ahumado con queso Philadelfia", 300, true);
         Dieta dieta = new Dieta("Dieta de la Luna", 2, LocalDate.of(2023, 9, 1), LocalDate.of(2023, 10, 1), 80, 70, true);
-        // DietaComida dietacomida = new DietaComida(3, 3, true);
+        DietaComida dietacomida = new DietaComida(3, 3, true);
         Consulta consulta = new Consulta(1, LocalDate.of(2023, 8, 23), 72, 165, 15, pacienteD.buscarPacienteXId(1)); //hacer metodo para buscar paciente por id
 
         //pacienteD.altaPaciente(paciente);
@@ -35,7 +35,7 @@ public class Nutricionista {
         //dietaD.altaDieta(dieta);
         //dietaD.bajaDietaN("Dieta Keto");
         //dietaD.modificarDieta(dieta);
-        //dietaComidaD.altaDietaComida(dietacomida);
+        dietaComidaD.altaDietaComida(dietacomida);
         //consultaD.agregarConsutla(consulta);
         //System.out.println(pacienteD.buscarPacienteXId(1));
         //System.out.println(pacienteD.buscarPacienteXApellido("Diaz"));

@@ -81,9 +81,9 @@ public class ConsultaData {
 
     }
 
-    public ArrayList<Consulta> listarPesos(int idPaciente) {
+public ArrayList<Consulta> listarPesos(int idPaciente) {
 
-        String sql = "SELECT fecha,peso FROM consulta WHERE idPaciente=?";
+        String sql = "SELECT fecha,peso,imc FROM consulta WHERE idPaciente=?";
 
         ArrayList<Consulta> listaPesos = new ArrayList<>();
 
@@ -98,6 +98,7 @@ public class ConsultaData {
 
                 consulta.setFecha(rs.getDate("fecha").toLocalDate());
                 consulta.setPeso(rs.getDouble("peso"));
+                consulta.setImc(rs.getDouble("imc"));
                 listaPesos.add(consulta);
             }
 
@@ -106,8 +107,7 @@ public class ConsultaData {
             JOptionPane.showMessageDialog(null, "Error " + ex);
         }
         return listaPesos;
-
-    }
+}
 
     public ArrayList<Comida> listarComidaXCal(int cantCalorias) {
 

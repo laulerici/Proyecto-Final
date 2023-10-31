@@ -1,17 +1,20 @@
+
 package Controlador;
 
 import accesoADatos.PacienteData;
 import entidades.Paciente;
 import javax.swing.JOptionPane;
 
-public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
 
-    private PacienteData paData = new PacienteData();
+public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
+    private PacienteData paData = new PacienteData ();
     private Paciente pacienteActual = null;
 
+   
     public VistaAgregarPaciente() {
         initComponents();
     }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -42,6 +45,12 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(102, 153, 255));
 
         jLabel1.setText("Agregar Pacientes");
+
+        jtnombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtnombreActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Nombre ");
 
@@ -173,7 +182,9 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,74 +195,84 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
+   
+    
     private void jtlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtlimpiarActionPerformed
-        borrarCampos();
-        pacienteActual = null;
-
+    borrarCampos ();
+    pacienteActual = null ;
+       
     }//GEN-LAST:event_jtlimpiarActionPerformed
 
     private void jbsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsalirActionPerformed
         dispose();
-
-
+        
+          
     }//GEN-LAST:event_jbsalirActionPerformed
 
+    
+                                     
 
     private void jtestadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtestadoActionPerformed
-
-
+        
+        
     }//GEN-LAST:event_jtestadoActionPerformed
 
     private void jbagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbagregarActionPerformed
         // TODO add your handling code here:
         try {
-            Integer dni = Integer.parseInt(jtdni.getText());
-            Integer telefono = Integer.parseInt(jttelefono.getText());
+    Integer dni= Integer.parseInt(jtdni.getText());
+    Integer telefono= Integer.parseInt(jttelefono.getText());
+    
+   
+   String apellido = jtapellido.getText();
+    if (!validarLetra(jtapellido.getText() )){
+    JOptionPane.showMessageDialog(this,"los datos no son correctos");
+    return;
+    }else{}
+    
+    
+    String nombre = jtnombre.getText();
+    if (!validarLetras(jtnombre.getText())){
+        JOptionPane.showMessageDialog(this,"los datos no son correctos");
+        return;
+    }else {}
+    
+    String domicilio = jtdomicilio.getText();
+    
+    if (nombre.isEmpty()|| apellido.isEmpty()|| domicilio.isEmpty()){
+    
+    JOptionPane.showMessageDialog(this,"no puede haber campos vacios");
+    return;
+    }
+     boolean estado= jtestado.isSelected();
+     
+    if(!validarNumeros(jttelefono.getText()));
+    {
+        
+    } 
+   
+    
+    if (pacienteActual == null){
+    pacienteActual = new Paciente (nombre, apellido, domicilio, dni, telefono, estado);
+    paData.altaPaciente(pacienteActual);
 
-            String apellido = jtapellido.getText();
-            if (!validarLetra(jtapellido.getText())) {
-                JOptionPane.showMessageDialog(this, "los datos no son correctos");
-                return;
-            } else {
-            }
-
-            String nombre = jtnombre.getText();
-            if (!validarLetras(jtnombre.getText())) {
-                JOptionPane.showMessageDialog(this, "los datos no son correctos");
-                return;
-            } else {
-            }
-
-            String domicilio = jtdomicilio.getText();
-
-            if (nombre.isEmpty() || apellido.isEmpty() || domicilio.isEmpty()) {
-
-                JOptionPane.showMessageDialog(this, "no puede haber campos vacios");
-                return;
-            }
-            boolean estado = jtestado.isSelected();
-
-            if (!validarNumeros(jttelefono.getText()));
-            {
-
-            }
-
-            if (pacienteActual == null) {
-                pacienteActual = new Paciente(nombre, apellido, domicilio, dni, telefono, estado);
-                paData.altaPaciente(pacienteActual);
-
-            } else {
-                JOptionPane.showMessageDialog(this, "imposible agregar");
-
-            }
-
-        } catch (NumberFormatException nfe) {
-            JOptionPane.showMessageDialog(this, "debe ingresar un Numero valido");
-
-        }
-
-
+    
+    }else {JOptionPane.showMessageDialog(this,"imposible agregar");
+    
+    }
+    
+    }catch (NumberFormatException nfe) {
+        JOptionPane.showMessageDialog(this,"debe ingresar un Numero valido");
+              
+        
+   }
+    
+    
     }//GEN-LAST:event_jbagregarActionPerformed
+
+    private void jtnombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtnombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtnombreActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -275,25 +296,24 @@ public class VistaAgregarPaciente extends javax.swing.JInternalFrame {
     // End of variables declaration//GEN-END:variables
 
     private void borrarCampos() {
-        jtdni.setText("");
-        jtapellido.setText("");
-        jtnombre.setText("");
-        jtdomicilio.setText("");
-        jttelefono.setText("");
+    jtdni.setText("");
+    jtapellido.setText("");
+    jtnombre.setText("");
+    jtdomicilio.setText("");
+    jttelefono.setText("");
     }
-
-    public static boolean validarNumeros(String datos) {
-
-        return datos.matches("[0-9]*");
+    
+    public static boolean validarNumeros (String datos){
+    
+    return datos.matches("[0-9]*");
     }
-
-    public static boolean validarLetras(String datos) {
-
-        return datos.matches("[a-zA-Z]*");
+    
+    public static boolean validarLetras (String datos){
+    
+    return datos.matches("[a-zA-Z]*");
     }
-
-    public static boolean validarLetra(String datos) {
-
-        return datos.matches("[a-zA-Z]*");
+    public static boolean validarLetra (String datos){
+    
+    return datos.matches("[a-zA-Z]*");
     }
 }

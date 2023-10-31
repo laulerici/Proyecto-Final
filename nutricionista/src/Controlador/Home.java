@@ -30,9 +30,7 @@ public class Home extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         Button_Busqueda = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        Button_Ajustes = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        Button_info = new javax.swing.JLabel();
         Panel_Exit = new javax.swing.JPanel();
         Button_Exit = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
@@ -167,46 +165,10 @@ public class Home extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Button_Ajustes.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        Button_Ajustes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Button_Ajustes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ajustes-35.png"))); // NOI18N
-        Button_Ajustes.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Button_Ajustes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Button_AjustesMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Button_AjustesMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Button_AjustesMouseExited(evt);
-            }
-        });
-        jPanel5.add(Button_Ajustes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
-
         BarraLateral.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 210, 40));
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 255));
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        Button_info.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        Button_info.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Button_info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/información-35.png"))); // NOI18N
-        Button_info.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Button_info.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Button_infoMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                Button_infoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                Button_infoMouseExited(evt);
-            }
-        });
-        jPanel6.add(Button_info, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
-
         BarraLateral.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 210, 40));
 
         Panel_Exit.setBackground(new java.awt.Color(102, 0, 0));
@@ -260,7 +222,7 @@ public class Home extends javax.swing.JFrame {
         PanelContenedor.setLayout(PanelContenedorLayout);
         PanelContenedorLayout.setHorizontalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 778, Short.MAX_VALUE)
+            .addGap(0, 772, Short.MAX_VALUE)
         );
         PanelContenedorLayout.setVerticalGroup(
             PanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,7 +310,7 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(Panel_Close, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(PanelPrincipalLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(escritorio)
                             .addComponent(PanelContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -438,20 +400,6 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_Button_ExitMouseClicked
 
-    private void Button_infoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_infoMouseExited
-        jPanel6.setBackground(new Color(204,204,255));
-        Button_info.setText("");
-    }//GEN-LAST:event_Button_infoMouseExited
-
-    private void Button_infoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_infoMouseEntered
-        jPanel6.setBackground(Color.lightGray);
-        Button_info.setText("Información");
-    }//GEN-LAST:event_Button_infoMouseEntered
-
-    private void Button_infoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_infoMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_infoMouseClicked
-
     private void Button_BusquedaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_BusquedaMouseExited
         jPanel5.setBackground(new Color(204,204,255));
         Button_Busqueda.setText("");
@@ -463,25 +411,12 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_Button_BusquedaMouseEntered
 
     private void Button_BusquedaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_BusquedaMouseClicked
-        VistaBuscarConsultas buscarConsulta = new  VistaBuscarConsultas();
-        buscarConsulta.setVisible(true);
-        escritorio.add(buscarConsulta);
-        escritorio.moveToFront(buscarConsulta);
+        
+        VistaBuscarPaciente buscarPaciente = new  VistaBuscarPaciente();
+        buscarPaciente.setVisible(true);
+        escritorio.add(buscarPaciente);
+        escritorio.moveToFront(buscarPaciente);
     }//GEN-LAST:event_Button_BusquedaMouseClicked
-
-    private void Button_AjustesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_AjustesMouseExited
-        jPanel4.setBackground(new Color(204,204,255));
-        Button_Ajustes.setText("");
-    }//GEN-LAST:event_Button_AjustesMouseExited
-
-    private void Button_AjustesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_AjustesMouseEntered
-        jPanel4.setBackground(Color.lightGray);
-        Button_Ajustes.setText("Ajustes");
-    }//GEN-LAST:event_Button_AjustesMouseEntered
-
-    private void Button_AjustesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Button_AjustesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Button_AjustesMouseClicked
 
     private void BConPacienteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BConPacienteMouseExited
         jPanel3.setBackground(new Color(204,204,255));
@@ -591,7 +526,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel BArmarDieta;
     private javax.swing.JLabel BConPaciente;
     private javax.swing.JPanel BarraLateral;
-    private javax.swing.JLabel Button_Ajustes;
     private javax.swing.JLabel Button_Busqueda;
     private javax.swing.JLabel Button_Close;
     private javax.swing.JLabel Button_Comida;
@@ -599,7 +533,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel Button_Home;
     private javax.swing.JLabel Button_Mi_Info;
     private javax.swing.JLabel Button_Min;
-    private javax.swing.JLabel Button_info;
     private javax.swing.JPanel PanelContenedor;
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JPanel Panel_Close;

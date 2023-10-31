@@ -185,7 +185,7 @@ public class PacienteData {
         return paciente;
     }
 
-    public Paciente buscarPacienteXdni(int dni) {
+public Paciente buscarPacienteXdni(int dni) {
 
         String sql = "SELECT * FROM paciente WHERE estado = 1 AND dni = ?";
 
@@ -198,7 +198,8 @@ public class PacienteData {
             if (rs.next()) {
 
                 paciente = new Paciente();
-                paciente.setIdPaciente(dni);
+                paciente.setDni(dni);
+                paciente.setIdPaciente(rs.getInt("idPaciente"));
                 paciente.setNombre(rs.getString("nombre"));
                 paciente.setApellido(rs.getString("apellido"));
                 paciente.setDomicilio(rs.getString("domicilio"));
@@ -217,7 +218,10 @@ public class PacienteData {
             JOptionPane.showMessageDialog(null, "Error " + ex);
         }
         return paciente;
-    }
+        
+}
+
+
 
     public ArrayList<Paciente> listarPacientes() {
 
