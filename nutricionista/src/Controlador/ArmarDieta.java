@@ -1,19 +1,11 @@
 
 package Controlador;
 
-import accesoADatos.ComidaData;
-import accesoADatos.DietaComidaData;
-import accesoADatos.DietaData;
-import accesoADatos.PacienteData;
-import entidades.Comida;
-import entidades.Consulta;
-import entidades.Dieta;
-import entidades.DietaComida;
-import entidades.Paciente;
+import accesoADatos.*;
+import entidades.*;
 import java.util.ArrayList;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.DefaultListModel;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+
 
 public class ArmarDieta extends javax.swing.JInternalFrame {
 

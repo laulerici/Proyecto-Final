@@ -1,13 +1,7 @@
 package accesoADatos;
 
-import entidades.Comida;
-import entidades.Consulta;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import entidades.*;
+import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -81,9 +75,9 @@ public class ConsultaData {
 
     }
 
-public ArrayList<Consulta> listarPesos(int idPaciente) {
+    public ArrayList<Consulta> listarPesos(int idPaciente) {
 
-        String sql = "SELECT fecha,peso,imc FROM consulta WHERE idPaciente=?";
+        String sql = "SELECT fecha,peso FROM consulta WHERE idPaciente=?";
 
         ArrayList<Consulta> listaPesos = new ArrayList<>();
 
@@ -98,7 +92,6 @@ public ArrayList<Consulta> listarPesos(int idPaciente) {
 
                 consulta.setFecha(rs.getDate("fecha").toLocalDate());
                 consulta.setPeso(rs.getDouble("peso"));
-                consulta.setImc(rs.getDouble("imc"));
                 listaPesos.add(consulta);
             }
 
@@ -107,7 +100,8 @@ public ArrayList<Consulta> listarPesos(int idPaciente) {
             JOptionPane.showMessageDialog(null, "Error " + ex);
         }
         return listaPesos;
-}
+
+    }
 
     public ArrayList<Comida> listarComidaXCal(int cantCalorias) {
 
