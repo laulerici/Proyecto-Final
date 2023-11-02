@@ -36,3 +36,16 @@ nutricionista/src/Controlador/Login1.form
 !/nutricionista/src/Controlador/VistaDietaPaciente.java
 !/nutricionista/src/Controlador/VistaComida.java
 !/nutricionista/src/Controlador/VistaComida.form
+!/nutricionista/src/Controlador/VentanaPrincipal.java
+!/nutricionista/src/Controlador/VistaAgregarPaciente.form
+!/nutricionista/src/Controlador/VistaAgregarPaciente.java
+!/nutricionista/src/Controlador/VistaBuscarConsultas.java
+!/nutricionista/src/Controlador/VistaBuscarConsultas.form
+!/nutricionista/src/Controlador/VistaBuscarPaciente.form
+!/nutricionista/src/Controlador/VistaBuscarPaciente.java
+!/nutricionista/src/Controlador/DietaPaciente.form
+!/nutricionista/src/Controlador/DietaPaciente.java
+!/nutricionista/src/Controlador/ArmarDieta.java
+!/nutricionista/src/Controlador/ArmarDieta.form
+!/nutricionista/src/Controlador/AgregarConsultasView.java
+!/nutricionista/src/Controlador/AgregarConsultasView.form

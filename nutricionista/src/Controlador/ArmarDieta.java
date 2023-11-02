@@ -4,7 +4,8 @@ package Controlador;
 import accesoADatos.*;
 import entidades.*;
 import java.util.ArrayList;
-import javax.swing.*;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 
 
 public class ArmarDieta extends javax.swing.JInternalFrame {

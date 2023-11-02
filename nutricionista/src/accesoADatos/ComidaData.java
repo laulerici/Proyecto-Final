@@ -23,10 +23,17 @@ public class ComidaData {
 
     public void altaComida(Comida comida) {
 
-        String sql = "INSERT INTO comida (nombre, detalle, cantCalorias,estado) VALUES (?,?,?,?)";
+    // Verificar si ya existe una comida con el mismo nombre en la base de datos
+    boolean comidaExistente = verificarComidaExistente(comida.getNombre());
 
+    if (comidaExistente) {
+        // Mostrar mensaje de error indicando que la comida ya existe
+        JOptionPane.showMessageDialog(null, "La comida ya existe en la base de datos.");
+    } else {
+        String sql = "INSERT INTO comida (nombre, detalle, cantCalorias, estado) VALUES (?,?,?,?)";
+        PreparedStatement ps;
         try {
-            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
             ps.setString(1, comida.getNombre());
             ps.setString(2, comida.getDetalle());
@@ -38,21 +45,40 @@ public class ComidaData {
             ResultSet rs = ps.getGeneratedKeys();
 
             if (rs.next()) {
-
                 comida.setIdComida(rs.getInt(1));
-
                 JOptionPane.showMessageDialog(null, "Comida ingresada correctamente");
-
             }
-
             ps.close();
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error " + ex);
+            JOptionPane.showMessageDialog(null, "Error al acceder tabla comida " + ex);
         }
     }
+    }
 
-    public void bajaComidaN(String nombre) {
+// Método para verificar si ya existe una comida con el mismo nombre en la base de datos
+public boolean verificarComidaExistente(String nombreComida) {
+    String sql = "SELECT COUNT(*) FROM comida WHERE nombre = ?";
+    PreparedStatement ps;
+    try {
+        ps = con.prepareStatement(sql);
+        ps.setString(1, nombreComida);
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            int count = rs.getInt(1);
+            return count > 0;
+        }
+        ps.close();
+
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Error al acceder tabla comida " + ex);
+    }
+
+    return false;
+}
+
+public void bajaComidaN(String nombre) {
 
         String sql = "UPDATE comida SET estado = 0 WHERE nombre=?";
 
@@ -72,27 +98,26 @@ public class ComidaData {
 
     public void modificarComida(Comida comida) {
 
-        String sql = "UPDATE comida SET nombre=?, detalle=?, cantCalorias=? WHERE estado=1 AND idComida=?";
+        String sql = "UPDATE comida SET nombre=?, detalle=?, cantCalorias=? WHERE idComida = ?";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-
             ps.setString(1, comida.getNombre());
             ps.setString(2, comida.getDetalle());
             ps.setInt(3, comida.getCantCalorias());
             ps.setInt(4, comida.getIdComida());
 
-            int exito = ps.executeUpdate();
-
+            int exito =(int)ps.executeLargeUpdate();
             if (exito == 1) {
+                
                 JOptionPane.showMessageDialog(null, "Comida modificada");
             }
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Error " + ex);
+            JOptionPane.showMessageDialog(null, "Error no se puede modificar " + ex);
         }
-
     }
+    
 
     public Comida buscarComidaPorNombre(String nombre) {
         String sql = "SELECT * FROM comida WHERE nombre=?";
@@ -105,15 +130,13 @@ public class ComidaData {
             
             if (rs.next()){
                 comida = new Comida();
-                
-                
                 comida.setNombre("nombre");
                 comida.setIdComida(rs.getInt("idComida"));
                 comida.setDetalle(rs.getString("detalle"));
                 comida.setCantCalorias(rs.getInt("cantCalorias"));
                 comida.setEstado(rs.getBoolean("estado"));
             }else{
-                JOptionPane.showMessageDialog(null,"Comida inexistente");
+                JOptionPane.showMessageDialog(null,"ingrese un nombre Valido");
             }
             ps.close();
         }catch(SQLException ex){
@@ -181,7 +204,7 @@ public class ComidaData {
 
         public ArrayList<Comida> listarComida() {
 
-        String sql = "SELECT * FROM comida WHERE estado=1";
+        String sql = "SELECT * FROM comida";
         ArrayList<Comida> listaComidas = new ArrayList<>();
 
         try {
@@ -191,9 +214,8 @@ public class ComidaData {
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-                
                 Comida comida = new Comida();
-                
+
                 comida.setIdComida(rs.getInt("idComida"));
                 comida.setNombre(rs.getString("nombre"));
                 comida.setDetalle(rs.getString("detalle"));
